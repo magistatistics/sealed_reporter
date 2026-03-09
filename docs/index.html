@@ -6,21 +6,35 @@
   <title>Sealed Reporter</title>
   <link rel="stylesheet" href="/sealed_reporter/static/css/dashboard.css">
 </head>
-<body>
-  <main class="report-shell">
-    <header class="report-header">
-      <div class="report-title-wrap">
-        <div>
-          <h1>Sealed Reporter</h1>
-          <p>Select a report to open its dashboard.</p>
-        </div>
-      </div>
-    </header>
+<body class="dashboard-page">
+  
+<header class="report-topline">
+  <div class="report-shell report-topline-inner">
+    <div class="report-topline-left">
+      
+    </div>
+    <div class="report-topline-right">
+      <a class="report-topline-btn" href="/sealed_reporter/changelog">📋 Changelog</a>
+      <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle color theme">🌙 Dark</button>
+    </div>
+  </div>
+</header>
 
+  <header class="report-index-banner">
+    <div class="report-shell report-index-banner-inner">
+      <div class="report-index-heading">
+        <h1 class="report-index-title">Sealed Reporter</h1>
+        <span class="report-index-byline">by <a href="https://instagram.com/guidimtg" target="_blank" rel="noopener noreferrer">@guidimtg</a></span>
+      </div>
+      <p class="report-index-lead">Choose a set report to open the full dashboard and card signals.</p>
+    </div>
+  </header>
+
+  <main class="report-shell">
     <section class="report-index-grid">
       
         <a class="report-index-card" href="/sealed_reporter/report/tmt">
-          <div class="report-index-cover" style="background-image: linear-gradient(180deg, rgba(6,11,22,0.18) 0%, rgba(6,11,22,0.82) 100%), url('https://images.ctfassets.net/0piqveu8x9oj/1tg20FUmA12O4OMvgwbXR6/312e6578c2e5dba83eece1c482d24dd1/TMT_prodpage_thumbnail.jpg')">
+          <div class="report-index-cover" style="background-image: url('https://images.ctfassets.net/0piqveu8x9oj/1tg20FUmA12O4OMvgwbXR6/312e6578c2e5dba83eece1c482d24dd1/TMT_prodpage_thumbnail.jpg')">
             
               <img class="report-index-set-symbol" src="https://svgs.scryfall.io/sets/tmt.svg?1772427600" alt="TMT symbol">
             
@@ -34,5 +48,36 @@
       
     </section>
   </main>
+
+  <footer class="report-float-footer">
+    Created with ❤ and mathematics by
+    <a href="https://instagram.com/guidimtg" target="_blank" rel="noopener noreferrer">@guidimtg</a>
+    <span class="footer-separator">•</span>
+    <span class="footer-version">Version 0.0.0-beta.1</span>
+  </footer>
+
+  <script>
+    const allowedThemes = ["dark", "light"];
+    const storedTheme = (window.localStorage.getItem("sealed-reporter-theme") || "").toLowerCase();
+    const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let activeTheme = allowedThemes.includes(storedTheme) ? storedTheme : (systemPrefersDark ? "dark" : "light");
+
+    function applyTheme(theme) {
+      activeTheme = allowedThemes.includes(theme) ? theme : "dark";
+      document.body.setAttribute("data-theme", activeTheme);
+      window.localStorage.setItem("sealed-reporter-theme", activeTheme);
+      const btn = document.getElementById("themeToggleBtn");
+      if (btn) {
+        btn.textContent = activeTheme === "dark" ? "🌙 Dark" : "☀️ Light";
+      }
+    }
+
+    document.getElementById("themeToggleBtn").addEventListener("click", () => {
+      const nextTheme = activeTheme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+    });
+
+    applyTheme(activeTheme);
+  </script>
 </body>
 </html>
