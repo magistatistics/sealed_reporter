@@ -1,0 +1,1981 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teenage Mutant Ninja Turtles - Sealed Reporter</title>
+  <link rel="stylesheet" href="/sealed_reporter/static/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-page">
+  
+  <header class="report-topline">
+    <div class="report-shell report-topline-inner">
+      <a class="report-page-back" href="/sealed_reporter/">&lt; Back to Reports</a>
+      <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle color theme">🌙 Dark</button>
+    </div>
+  </header>
+
+  <section class="report-hero" style="background-image: linear-gradient(90deg, rgba(6,11,22,0.72) 10%, rgba(6,11,22,0.50) 55%, rgba(6,11,22,0.30) 100%), url('https://images.ctfassets.net/0piqveu8x9oj/1tg20FUmA12O4OMvgwbXR6/312e6578c2e5dba83eece1c482d24dd1/TMT_prodpage_thumbnail.jpg')">
+    <div class="report-shell report-hero-inner">
+      <div class="report-hero-left">
+        <div class="report-title-wrap">
+          
+            <img class="set-symbol-img" src="https://svgs.scryfall.io/sets/tmt.svg?1772427600" alt="TMT symbol">
+          
+          <div>
+            <h1>Teenage Mutant Ninja Turtles</h1>
+            <p>Teenage Mutant Ninja Turtles • TMT</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-hero-right">
+        <nav class="report-tab-menu">
+          <button class="report-tab-btn active" data-target="panel-overview"><span class="tab-title">📊 Set Info</span></button>
+          <button class="report-tab-btn" data-target="panel-bread">
+            <span class="tab-title">🍞 B.R.E.A.D.</span>
+          </button>
+          <button class="report-tab-btn" data-target="panel-mechanics">
+            <span class="tab-title">🤝 Synergy</span>
+          </button>
+          <button class="report-tab-btn" data-target="panel-guidelines"><span class="tab-title">🧭 Guidelines</span></button>
+          <button class="report-tab-btn" data-target="panel-cards"><span class="tab-title">🃏 Cards Exploration</span></button>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <main class="report-shell">
+
+    <section id="panel-overview" class="report-panel">
+      <div class="overview-top-row">
+        <article class="metric-card kpi-card pool-count-card">
+          <h3>Total Creatures</h3>
+          <div class="kpi-value-wrap">
+            <p class="metric">155</p>
+          </div>
+        </article>
+        <article class="metric-card kpi-card">
+          <h3>Avg Mana Value</h3>
+          <div class="kpi-value-wrap">
+            <p class="metric">3.1</p>
+          </div>
+        </article>
+        <article class="metric-card type-composition-card">
+          <h3>Type Composition</h3>
+          <div class="type-composition-bar">
+            
+              <span class="type-segment type-creature" style="width: 79.5%" title="Creatures: 155"></span>
+            
+              <span class="type-segment type-enchantment" style="width: 3.1%" title="Enchantments: 6"></span>
+            
+              <span class="type-segment type-instant" style="width: 3.1%" title="Instants: 6"></span>
+            
+              <span class="type-segment type-sorcery" style="width: 4.6%" title="Sorceries: 9"></span>
+            
+              <span class="type-segment type-other" style="width: 9.7%" title="Others: 19"></span>
+            
+          </div>
+          <div class="type-tag-list">
+            
+              <span class="type-tag type-creature">Creatures: 155</span>
+            
+              <span class="type-tag type-enchantment">Enchantments: 6</span>
+            
+              <span class="type-tag type-instant">Instants: 6</span>
+            
+              <span class="type-tag type-sorcery">Sorceries: 9</span>
+            
+              <span class="type-tag type-other">Others: 19</span>
+            
+          </div>
+        </article>
+      </div>
+
+      <article class="panel-card">
+        <h2>Mana Value Histogram</h2>
+        <div class="curve-legend">
+          <button class="curve-legend-btn" data-color="W" aria-label="Focus white">
+  
+  <span class="mana-symbol mana-w curve-pill" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span></button>
+          <button class="curve-legend-btn" data-color="U" aria-label="Focus blue">
+  
+  <span class="mana-symbol mana-u curve-pill" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span></button>
+          <button class="curve-legend-btn" data-color="B" aria-label="Focus black">
+  
+  <span class="mana-symbol mana-b curve-pill" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span></button>
+          <button class="curve-legend-btn" data-color="R" aria-label="Focus red">
+  
+  <span class="mana-symbol mana-r curve-pill" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span></button>
+          <button class="curve-legend-btn" data-color="G" aria-label="Focus green">
+  
+  <span class="mana-symbol mana-g curve-pill" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span></button>
+          <button class="curve-legend-btn" data-color="C" aria-label="Focus colorless">
+  
+  <span class="mana-symbol mana-c curve-pill" data-mana-color="C">
+    
+      <i class="ms ms-c"></i>
+    
+  </span></button>
+          <button class="curve-legend-btn" data-color="M" aria-label="Focus multicolor">
+  
+  <span class="mana-symbol mana-m curve-pill" data-mana-color="M">
+    
+      <i class="ms ms-multicolor"></i>
+    
+  </span></button>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="manaCurveChart"></canvas>
+        </div>
+      </article>
+
+      <div class="insight-grid">
+        <article class="panel-card">
+          <h3>Curve Peak</h3>
+          <p>
+            Highest count at mana value
+            <strong>2</strong>
+            (52 cards).
+          </p>
+        </article>
+        <article class="panel-card">
+          <h3>Natural Curve Rank</h3>
+          <div class="curve-rank-chain">
+            
+              
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+              <span class="curve-chain-sep">&gt;</span>
+            
+              
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+              <span class="curve-chain-sep">&gt;</span>
+            
+              
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+              <span class="curve-chain-sep">&gt;</span>
+            
+              
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+              <span class="curve-chain-sep">&gt;</span>
+            
+              
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+              
+            
+          </div>
+        </article>
+        <article class="panel-card">
+          <h3>Curve Size</h3>
+          <div class="curve-rank-chain">
+            
+              
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+              <span class="curve-chain-sep">&gt;</span>
+            
+              
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+              <span class="curve-chain-sep">&gt;</span>
+            
+              
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+              
+            
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="panel-bread" class="report-panel report-panel-hidden">
+      <article class="panel-card">
+        <h2>B.R.E.A.D. Highlights</h2>
+        <div class="bread-grid">
+          
+            <div class="bread-item">
+              <h3>BOMB</h3>
+              
+                <div class="bread-colors">
+                  
+                    
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+                </div>
+                <p>Average Grade: <strong>8.0</strong></p>
+              
+            </div>
+          
+            <div class="bread-item">
+              <h3>REMOVAL</h3>
+              
+                <div class="bread-colors">
+                  
+                    
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+                </div>
+                <p>Average Grade: <strong>1.42</strong></p>
+              
+            </div>
+          
+            <div class="bread-item">
+              <h3>EVASION</h3>
+              
+                <div class="bread-colors">
+                  
+                    
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                  
+                </div>
+                <p>Average Grade: <strong>1.3</strong></p>
+              
+            </div>
+          
+            <div class="bread-item">
+              <h3>AGGRO</h3>
+              
+                <div class="bread-colors">
+                  
+                    
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+                </div>
+                <p>Average Grade: <strong>2.23</strong></p>
+              
+            </div>
+          
+            <div class="bread-item">
+              <h3>DIVERSITY</h3>
+              
+                <div class="bread-colors">
+                  
+                    
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+                </div>
+                <p>Average Grade: <strong>1.32</strong></p>
+              
+            </div>
+          
+        </div>
+      </article>
+
+      <div class="bread-side-by-side">
+        <article class="panel-card">
+          <h2>Top Individual Colors</h2>
+          <div class="list-rows">
+            
+              <div class="list-row">
+                
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                <span>Hits: 4</span>
+                <span>Score: 7.59</span>
+              </div>
+            
+              <div class="list-row">
+                
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                <span>Hits: 4</span>
+                <span>Score: 5.61</span>
+              </div>
+            
+              <div class="list-row">
+                
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                <span>Hits: 3</span>
+                <span>Score: 10.54</span>
+              </div>
+            
+              <div class="list-row">
+                
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                <span>Hits: 2</span>
+                <span>Score: 9.32</span>
+              </div>
+            
+              <div class="list-row">
+                
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                <span>Hits: 2</span>
+                <span>Score: 2.62</span>
+              </div>
+            
+          </div>
+        </article>
+
+        <article class="panel-card">
+          <h2>Best 6 Color Pairs</h2>
+          <div class="pair-grid">
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </div>
+                <small>Hits: 8 | Score: 13.2</small>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </div>
+                <small>Hits: 7 | Score: 18.12</small>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </div>
+                <small>Hits: 7 | Score: 16.14</small>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                </div>
+                <small>Hits: 6 | Score: 16.91</small>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                </div>
+                <small>Hits: 6 | Score: 14.93</small>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                </div>
+                <small>Hits: 6 | Score: 10.21</small>
+              </div>
+            
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="panel-mechanics" class="report-panel report-panel-hidden">
+      <article class="panel-card panel-plain">
+        <h2>Synergy</h2>
+        <div class="synergy-podium">
+          
+          
+            <div class="cluster-item synergy-podium-item synergy-podium-1">
+              <div class="synergy-podium-medal">🥇</div>
+              <h3 class="synergy-title">
+                
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                
+                <span>Mutagen Tokens</span>
+              </h3>
+              <p class="muted">Mutagen token/counter package.</p>
+            </div>
+          
+            <div class="cluster-item synergy-podium-item synergy-podium-2">
+              <div class="synergy-podium-medal">🥈</div>
+              <h3 class="synergy-title">
+                
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                
+                <span>Affinity for Artifacts</span>
+              </h3>
+              <p class="muted">Cost reduction package tied to artifact density.</p>
+            </div>
+          
+            <div class="cluster-item synergy-podium-item synergy-podium-3">
+              <div class="synergy-podium-medal">🥉</div>
+              <h3 class="synergy-title">
+                
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                
+                <span>Counters +1/+1</span>
+              </h3>
+              <p class="muted">+1/+1 counter growth and payoffs.</p>
+            </div>
+          
+        </div>
+      </article>
+
+      <div class="synergy-bottom-row">
+        <article class="panel-card panel-plain">
+          <h3>Synergy Ranking</h3>
+          <div class="synergy-rank-list">
+            
+              <div class="synergy-rank-row">
+                <span class="synergy-rank-pos">4.</span>
+                <h4 class="synergy-title">
+                  
+                    
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+                  <span>Sneak</span>
+                </h4>
+              </div>
+            
+              <div class="synergy-rank-row">
+                <span class="synergy-rank-pos">5.</span>
+                <h4 class="synergy-title">
+                  
+                    
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+                  <span>Alliance</span>
+                </h4>
+              </div>
+            
+              <div class="synergy-rank-row">
+                <span class="synergy-rank-pos">6.</span>
+                <h4 class="synergy-title">
+                  
+                    
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+                  <span>Landcycling</span>
+                </h4>
+              </div>
+            
+              <div class="synergy-rank-row">
+                <span class="synergy-rank-pos">7.</span>
+                <h4 class="synergy-title">
+                  
+                    
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                  
+                  <span>Food Package</span>
+                </h4>
+              </div>
+            
+              <div class="synergy-rank-row">
+                <span class="synergy-rank-pos">8.</span>
+                <h4 class="synergy-title">
+                  
+                    
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+                  <span>Disappear</span>
+                </h4>
+              </div>
+            
+              <div class="synergy-rank-row">
+                <span class="synergy-rank-pos">9.</span>
+                <h4 class="synergy-title">
+                  
+                    
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+                    
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+                  <span>Class Cards</span>
+                </h4>
+              </div>
+            
+          </div>
+        </article>
+
+        <article class="panel-card panel-plain">
+          <h3>Best 6 Synergy Pairs</h3>
+          <div class="pair-grid synergy-pair-simple">
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="panel-guidelines" class="report-panel report-panel-hidden">
+      <article class="panel-card panel-plain">
+        <h2>Overview & Guidelines</h2>
+        <div class="guideline-card">
+          <h3>Consolidated Best Pairs</h3>
+          <div class="pair-grid synergy-pair-simple">
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+              <div class="pair-item">
+                <div>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      </article>
+
+      <article class="panel-card panel-plain">
+        <h2>Key Signals</h2>
+        <div class="signals-grid">
+          
+            <div class="cluster-item signal-item">
+              <div class="synergy-head">
+                <h3 class="synergy-title">
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </h3>
+                <span class="synergy-grade">56</span>
+              </div>
+              <div class="signal-cards">
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/b/b/bbe1d7e5-68e2-4458-aa3f-5e97fa8e7cae.jpg?1771586948" alt="Purple Dragon Punks">
+                      
+                      <span class="grade-badge">1.3</span>
+                    </div>
+                    <p class="signal-card-name">Purple Dragon Punks</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/8/0/808a5bc0-0999-47cf-854c-30db6277efe5.jpg?1760114588" alt="Casey Jones, Jury-Rig Justiciar">
+                      
+                      <span class="grade-badge">0.9</span>
+                    </div>
+                    <p class="signal-card-name">Casey Jones, Jury-Rig Justiciar</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/1/5/1515eed9-3b21-42f0-ab57-de5df19317af.jpg?1771586941" alt="Old Hob, Alleycat Blues">
+                      
+                      <span class="grade-badge">0.7</span>
+                    </div>
+                    <p class="signal-card-name">Old Hob, Alleycat Blues</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/4/0/40b9b1d0-b7d1-473e-b6a9-a29d527c2f35.jpg?1771502679" alt="Wingnut, Bat on the Belfry">
+                      
+                      <span class="grade-badge">0.7</span>
+                    </div>
+                    <p class="signal-card-name">Wingnut, Bat on the Belfry</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/6/0/600e3bc1-9777-4057-a11e-4f61582636c6.jpg?1771586853" alt="Dream Beavers">
+                      
+                      <span class="grade-badge">0.7</span>
+                    </div>
+                    <p class="signal-card-name">Dream Beavers</p>
+                  </div>
+                
+              </div>
+            </div>
+          
+            <div class="cluster-item signal-item">
+              <div class="synergy-head">
+                <h3 class="synergy-title">
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                </h3>
+                <span class="synergy-grade">61</span>
+              </div>
+              <div class="signal-cards">
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/0/8/081944c3-f1c8-4906-911d-a9133835218c.jpg?1771587126" alt="New Generation&#39;s Technique">
+                      
+                      <span class="grade-badge">1.4</span>
+                    </div>
+                    <p class="signal-card-name">New Generation&#39;s Technique</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/d/1/d1a72d09-9cfc-463a-a9ec-3359003d54da.jpg?1771502693" alt="Frog Butler">
+                      
+                      <span class="grade-badge">1.3</span>
+                    </div>
+                    <p class="signal-card-name">Frog Butler</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/c/2/c2164204-120c-4dff-86ac-46ca9012ccd9.jpg?1771424712" alt="Mona Lisa, Science Geek">
+                      
+                      <span class="grade-badge">1.2</span>
+                    </div>
+                    <p class="signal-card-name">Mona Lisa, Science Geek</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/f/4/f4b8f7e6-9bff-430b-b2f5-4308d57d1194.jpg?1771586987" alt="West Wind Avatar">
+                      
+                      <span class="grade-badge">0.9</span>
+                    </div>
+                    <p class="signal-card-name">West Wind Avatar</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/0/f/0ffce972-bed9-445a-a9a0-4816f156d88d.jpg?1771342415" alt="Cowabunga!">
+                      
+                      <span class="grade-badge">0.8</span>
+                    </div>
+                    <p class="signal-card-name">Cowabunga!</p>
+                  </div>
+                
+              </div>
+            </div>
+          
+            <div class="cluster-item signal-item">
+              <div class="synergy-head">
+                <h3 class="synergy-title">
+                  
+  
+  <span class="mana-symbol mana-b mana-badge" data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </h3>
+                <span class="synergy-grade">62</span>
+              </div>
+              <div class="signal-cards">
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/9/f/9fbaabb5-e981-4cbf-888c-46449412711f.jpg?1771424706" alt="Lita, Little Orphan Amphibian">
+                      
+                      <span class="grade-badge">1.1</span>
+                    </div>
+                    <p class="signal-card-name">Lita, Little Orphan Amphibian</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/e/f/ef9e227e-c581-479c-a962-2f191352b07f.jpg?1771502541" alt="Quintessential Katana">
+                      
+                      <span class="grade-badge">1.1</span>
+                    </div>
+                    <p class="signal-card-name">Quintessential Katana</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/5/d/5d9a4f9a-1e3a-4de8-a7c0-7158c6703b4e.jpg?1771586776" alt="Uneasy Alliance">
+                      
+                      <span class="grade-badge">1.0</span>
+                    </div>
+                    <p class="signal-card-name">Uneasy Alliance</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/d/f/dfb18239-d373-4795-8598-c82abae2cb62.jpg?1771342217" alt="The Last Ronin&#39;s Technique">
+                      
+                      <span class="grade-badge">0.9</span>
+                    </div>
+                    <p class="signal-card-name">The Last Ronin&#39;s Technique</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/5/d/5dd5369c-174c-450b-b776-553866787f8f.jpg?1771502533" alt="Mighty Mutanimals">
+                      
+                      <span class="grade-badge">0.7</span>
+                    </div>
+                    <p class="signal-card-name">Mighty Mutanimals</p>
+                  </div>
+                
+              </div>
+            </div>
+          
+            <div class="cluster-item signal-item">
+              <div class="synergy-head">
+                <h3 class="synergy-title">
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-w mana-badge" data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span>
+                </h3>
+                <span class="synergy-grade">60</span>
+              </div>
+              <div class="signal-cards">
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/b/b/bbe1d7e5-68e2-4458-aa3f-5e97fa8e7cae.jpg?1771586948" alt="Purple Dragon Punks">
+                      
+                      <span class="grade-badge">1.3</span>
+                    </div>
+                    <p class="signal-card-name">Purple Dragon Punks</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/9/f/9fbaabb5-e981-4cbf-888c-46449412711f.jpg?1771424706" alt="Lita, Little Orphan Amphibian">
+                      
+                      <span class="grade-badge">1.1</span>
+                    </div>
+                    <p class="signal-card-name">Lita, Little Orphan Amphibian</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/e/f/ef9e227e-c581-479c-a962-2f191352b07f.jpg?1771502541" alt="Quintessential Katana">
+                      
+                      <span class="grade-badge">1.1</span>
+                    </div>
+                    <p class="signal-card-name">Quintessential Katana</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/5/d/5d9a4f9a-1e3a-4de8-a7c0-7158c6703b4e.jpg?1771586776" alt="Uneasy Alliance">
+                      
+                      <span class="grade-badge">1.0</span>
+                    </div>
+                    <p class="signal-card-name">Uneasy Alliance</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/1/3/1308dadc-08a9-40bd-98a4-fb66d792e27d.jpg?1771587028" alt="The Neutrinos">
+                      
+                      <span class="grade-badge">0.9</span>
+                    </div>
+                    <p class="signal-card-name">The Neutrinos</p>
+                  </div>
+                
+              </div>
+            </div>
+          
+            <div class="cluster-item signal-item">
+              <div class="synergy-head">
+                <h3 class="synergy-title">
+                  
+  
+  <span class="mana-symbol mana-g mana-badge" data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                </h3>
+                <span class="synergy-grade">55</span>
+              </div>
+              <div class="signal-cards">
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/0/8/081944c3-f1c8-4906-911d-a9133835218c.jpg?1771587126" alt="New Generation&#39;s Technique">
+                      
+                      <span class="grade-badge">1.4</span>
+                    </div>
+                    <p class="signal-card-name">New Generation&#39;s Technique</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/b/b/bbe1d7e5-68e2-4458-aa3f-5e97fa8e7cae.jpg?1771586948" alt="Purple Dragon Punks">
+                      
+                      <span class="grade-badge">1.3</span>
+                    </div>
+                    <p class="signal-card-name">Purple Dragon Punks</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/d/1/d1a72d09-9cfc-463a-a9ec-3359003d54da.jpg?1771502693" alt="Frog Butler">
+                      
+                      <span class="grade-badge">1.3</span>
+                    </div>
+                    <p class="signal-card-name">Frog Butler</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/c/2/c2164204-120c-4dff-86ac-46ca9012ccd9.jpg?1771424712" alt="Mona Lisa, Science Geek">
+                      
+                      <span class="grade-badge">1.2</span>
+                    </div>
+                    <p class="signal-card-name">Mona Lisa, Science Geek</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/8/0/808a5bc0-0999-47cf-854c-30db6277efe5.jpg?1760114588" alt="Casey Jones, Jury-Rig Justiciar">
+                      
+                      <span class="grade-badge">0.9</span>
+                    </div>
+                    <p class="signal-card-name">Casey Jones, Jury-Rig Justiciar</p>
+                  </div>
+                
+              </div>
+            </div>
+          
+            <div class="cluster-item signal-item">
+              <div class="synergy-head">
+                <h3 class="synergy-title">
+                  
+  
+  <span class="mana-symbol mana-r mana-badge" data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span>
+                  
+  
+  <span class="mana-symbol mana-u mana-badge" data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span>
+                </h3>
+                <span class="synergy-grade">61</span>
+              </div>
+              <div class="signal-cards">
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/3/d/3d3d0a9a-3bde-451f-9d5a-af6c2a393953.jpg?1771587119" alt="Donatello&#39;s Technique">
+                      
+                      <span class="grade-badge">1.7</span>
+                    </div>
+                    <p class="signal-card-name">Donatello&#39;s Technique</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/3/1/31aa943f-c9db-43dc-8a72-7ef56f9f5c8b.jpg?1771502549" alt="April, Reporter of the Weird">
+                      
+                      <span class="grade-badge">1.4</span>
+                    </div>
+                    <p class="signal-card-name">April, Reporter of the Weird</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/b/b/bbe1d7e5-68e2-4458-aa3f-5e97fa8e7cae.jpg?1771586948" alt="Purple Dragon Punks">
+                      
+                      <span class="grade-badge">1.3</span>
+                    </div>
+                    <p class="signal-card-name">Purple Dragon Punks</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/a/b/ab47a37b-b66d-4f70-9bf0-4d5ed6b518f3.jpg?1771502595" alt="Sewer-veillance Cam">
+                      
+                      <span class="grade-badge">1.2</span>
+                    </div>
+                    <p class="signal-card-name">Sewer-veillance Cam</p>
+                  </div>
+                
+                  <div class="signal-card">
+                    <div class="signal-image-wrap">
+                      
+                        <img src="https://cards.scryfall.io/border_crop/front/4/a/4af284ba-fa54-43c5-8c76-3e1128957452.jpg?1771586820" alt="Retro-Mutation">
+                      
+                      <span class="grade-badge">1.0</span>
+                    </div>
+                    <p class="signal-card-name">Retro-Mutation</p>
+                  </div>
+                
+              </div>
+            </div>
+          
+        </div>
+      </article>
+    </section>
+
+    <section id="panel-cards" class="report-panel report-panel-hidden">
+      <article class="panel-card">
+        <h2>Card Highlight</h2>
+        <div class="highlight-controls">
+          <div class="highlight-filter-row">
+            <div class="highlight-filter-block">
+              <div class="highlight-tabs" id="highlightTabs">
+                <button data-tab="bomb" class="active">Bomb</button>
+                <button data-tab="removal">Removal</button>
+                <button data-tab="evasion">Evasion</button>
+                <button data-tab="aggro">Aggro</button>
+                <button data-tab="diversity">Diversity</button>
+                <button data-tab="all">All</button>
+              </div>
+            </div>
+            <div class="highlight-separator" aria-hidden="true"></div>
+            <div class="highlight-filter-block">
+              <div class="highlight-color-picker" id="highlightColors">
+                <button data-color="ALL" class="active">All</button>
+                <button data-color="W">
+  
+  <span class="mana-symbol mana-w " data-mana-color="W">
+    
+      <i class="ms ms-w"></i>
+    
+  </span></button>
+                <button data-color="U">
+  
+  <span class="mana-symbol mana-u " data-mana-color="U">
+    
+      <i class="ms ms-u"></i>
+    
+  </span></button>
+                <button data-color="B">
+  
+  <span class="mana-symbol mana-b " data-mana-color="B">
+    
+      <i class="ms ms-b"></i>
+    
+  </span></button>
+                <button data-color="R">
+  
+  <span class="mana-symbol mana-r " data-mana-color="R">
+    
+      <i class="ms ms-r"></i>
+    
+  </span></button>
+                <button data-color="G">
+  
+  <span class="mana-symbol mana-g " data-mana-color="G">
+    
+      <i class="ms ms-g"></i>
+    
+  </span></button>
+                <button data-color="C">
+  
+  <span class="mana-symbol mana-c " data-mana-color="C">
+    
+      <i class="ms ms-c"></i>
+    
+  </span></button>
+                <button data-color="M">
+  
+  <span class="mana-symbol mana-m " data-mana-color="M">
+    
+      <i class="ms ms-multicolor"></i>
+    
+  </span></button>
+              </div>
+            </div>
+            <div class="highlight-separator" aria-hidden="true"></div>
+            <div class="highlight-filter-block">
+              <label class="highlight-switch">
+                <input type="checkbox" id="cuOnlySwitch">
+                <span class="switch-slider" aria-hidden="true"></span>
+                <span>Low Rarity Priority</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div id="highlightGrid" class="highlight-grid"></div>
+        <div class="highlight-pagination">
+          <button id="prevPageBtn">Previous</button>
+          <span id="pageLabel"></span>
+          <button id="nextPageBtn">Next</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="report-float-footer">
+    Create with love and mathematics by
+    <a href="https://instagram.com/guidimtg" target="_blank" rel="noopener noreferrer">@guidimtg</a>
+  </footer>
+
+  <script>
+    const curveRows = [{"B": 0, "C": 13, "G": 0, "M": 0, "R": 0, "U": 0, "W": 0, "cmc": 0, "total": 13}, {"B": 2, "C": 1, "G": 3, "M": 0, "R": 0, "U": 2, "W": 5, "cmc": 1, "total": 13}, {"B": 9, "C": 5, "G": 7, "M": 8, "R": 11, "U": 4, "W": 8, "cmc": 2, "total": 52}, {"B": 6, "C": 2, "G": 6, "M": 11, "R": 5, "U": 10, "W": 6, "cmc": 3, "total": 46}, {"B": 6, "C": 1, "G": 5, "M": 4, "R": 5, "U": 5, "W": 6, "cmc": 4, "total": 32}, {"B": 3, "C": 1, "G": 3, "M": 5, "R": 5, "U": 3, "W": 3, "cmc": 5, "total": 23}, {"B": 1, "C": 0, "G": 2, "M": 4, "R": 1, "U": 2, "W": 0, "cmc": 6, "total": 10}, {"B": 0, "C": 0, "G": 1, "M": 1, "R": 0, "U": 1, "W": 0, "cmc": 7, "total": 3}, {"B": 1, "C": 0, "G": 0, "M": 0, "R": 0, "U": 1, "W": 0, "cmc": 8, "total": 2}, {"B": 0, "C": 1, "G": 0, "M": 0, "R": 0, "U": 0, "W": 0, "cmc": 9, "total": 1}];
+    const allowedFocusColors = ["ALL", "W", "U", "B", "R", "G", "C", "M"];
+    const allowedThemes = ["dark", "light"];
+    const reportTabToTarget = {
+      overview: "panel-overview",
+      bread: "panel-bread",
+      synergy: "panel-mechanics",
+      guidelines: "panel-guidelines",
+      signals: "panel-guidelines",
+      cards: "panel-cards"
+    };
+    const reportTargetToTab = Object.fromEntries(Object.entries(reportTabToTarget).map(([k, v]) => [v, k]));
+    const cssVar = (name, fallback) => {
+      const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+      return value || fallback;
+    };
+    function getCurveColors() {
+      return {
+        W: cssVar("--mana-w-chart", "#f8f1d4"),
+        U: cssVar("--mana-u-chart", "#7fb6ff"),
+        B: cssVar("--mana-b-chart", "#8a8a95"),
+        R: cssVar("--mana-r-chart", "#f18f7e"),
+        G: cssVar("--mana-g-chart", "#8bcf8f"),
+        C: cssVar("--mana-c-chart", "#b0b0b0"),
+        M: cssVar("--mana-m-chart", "#f5d76a")
+      };
+    }
+
+    const maxCmc = Math.max(7, ...curveRows.map((row) => Number(row.cmc) || 0));
+    const rowMap = new Map(curveRows.map((row) => [Number(row.cmc), row]));
+    const normalizedCurveRows = Array.from({ length: maxCmc + 1 }, (_, cmc) => rowMap.get(cmc) || ({
+      cmc, W: 0, U: 0, B: 0, R: 0, G: 0, C: 0, M: 0, total: 0
+    }));
+    const curveLabels = normalizedCurveRows.map((row) => row.cmc.toString());
+
+    const urlState = new URLSearchParams(window.location.search);
+    const focusFromUrl = (urlState.get("focus_color") || "ALL").toUpperCase();
+    let focusColor = allowedFocusColors.includes(focusFromUrl) ? focusFromUrl : "ALL";
+    const reportTabFromUrl = (urlState.get("report_tab") || "overview").toLowerCase();
+    let activeReportTarget = reportTabToTarget[reportTabFromUrl] || "panel-overview";
+    const storedTheme = (window.localStorage.getItem("sealed-reporter-theme") || "").toLowerCase();
+    const urlTheme = (urlState.get("theme") || "").toLowerCase();
+    const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let activeTheme = allowedThemes.includes(urlTheme)
+      ? urlTheme
+      : (allowedThemes.includes(storedTheme) ? storedTheme : (systemPrefersDark ? "dark" : "light"));
+
+    function getCurveDatasetsForFocus(color) {
+      if (color === "ALL") return curveDatasets;
+      return curveDatasets.filter((dataset) => dataset.label === color);
+    }
+
+    function buildCurveDatasets() {
+      const curveColors = getCurveColors();
+      return ["W", "U", "B", "R", "G", "C", "M"].map((colorKey) => ({
+        label: colorKey,
+        data: normalizedCurveRows.map((row) => row[colorKey] || 0),
+        backgroundColor: curveColors[colorKey],
+        borderRadius: 4,
+        borderSkipped: false,
+        maxBarThickness: 28
+      }));
+    }
+
+    let curveDatasets = buildCurveDatasets();
+
+    const manaCurveChart = new Chart(document.getElementById("manaCurveChart"), {
+      type: "bar",
+      data: { labels: curveLabels, datasets: getCurveDatasetsForFocus(focusColor) },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "nearest", intersect: true },
+        onClick: (_event, elements, chart) => {
+          if (!elements.length) return;
+          const idx = elements[0].datasetIndex;
+          const clickedDataset = chart.data.datasets[idx];
+          if (!clickedDataset?.label) return;
+          const next = focusColor === clickedDataset.label ? "ALL" : clickedDataset.label;
+          setFocusColor(next);
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items) => items.length ? `Mana Value ${items[0].label}` : "",
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.raw} cards`
+            }
+          }
+        },
+        scales: {
+          x: {
+            stacked: true,
+            grid: { color: "rgba(148, 163, 184, 0.15)" },
+            ticks: { color: "#cbd5e1" },
+            title: { display: true, text: "Mana Value (CMC)", color: "#cbd5e1" }
+          },
+          y: {
+            stacked: true,
+            beginAtZero: true,
+            ticks: { precision: 0, color: "#cbd5e1" },
+            grid: { color: "rgba(148, 163, 184, 0.15)" },
+            title: { display: true, text: "Card Quantity", color: "#cbd5e1" }
+          }
+        }
+      }
+    });
+
+    const reportId = "tmt";
+    const cardHighlightDataset = [{"color_bucket": "C", "grades": {"aggro": 1.0, "all": 0.4, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 0.0}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/0000419b-0bba-4488-8f7a-6194544ce91e.jpg?1721427487", "key": "Forest::593748325aae", "main_colors": [], "name": "Forest", "rarity": "common", "type_line": "Basic Land \u2014 Forest"}, {"color_bucket": "C", "grades": {"aggro": 1.0, "all": 0.4, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 0.0}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/000366c8-7a43-49d7-a103-ac5bd7efd9aa.jpg?1562052318", "key": "Swamp::7196f9208780", "main_colors": [], "name": "Swamp", "rarity": "common", "type_line": "Basic Land \u2014 Swamp"}, {"color_bucket": "C", "grades": {"aggro": 1.0, "all": 0.4, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 0.0}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/000f1f50-08e5-4d83-8159-98f06a0e2279.jpg?1572491305", "key": "Island::74f13a9391c2", "main_colors": [], "name": "Island", "rarity": "common", "type_line": "Basic Land \u2014 Island"}, {"color_bucket": "C", "grades": {"aggro": 1.0, "all": 0.4, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 0.0}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/00293ce4-3475-4064-8510-9e8c02faf3bf.jpg?1592674050", "key": "Plains::0b07baa5e2b7", "main_colors": [], "name": "Plains", "rarity": "common", "type_line": "Basic Land \u2014 Plains"}, {"color_bucket": "R", "grades": {"aggro": 1.3, "all": 0.88, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/003265d9-b2fc-4916-afc8-53ed2d6aa053.jpg?1769006146", "key": "Improvised Arsenal::3f147a0c6811", "main_colors": ["R"], "name": "Improvised Arsenal", "rarity": "rare", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "B", "grades": {"aggro": 0.44, "all": 2.852, "bomb": 11.8, "diversity": 0.0, "evasion": 0.62, "removal": 1.4}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/00436b30-d342-4c1d-81af-8f305bf53c86.jpg?1771343863", "key": "Armaggon, Future Shark::44baacee90ce", "main_colors": ["B"], "name": "Armaggon, Future Shark", "rarity": "rare", "type_line": "Legendary Creature \u2014 Shark Horror Mutant"}, {"color_bucket": "C", "grades": {"aggro": 1.0, "all": 0.4, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 0.0}, "image_url": "https://cards.scryfall.io/border_crop/front/0/0/005a993c-5111-4364-9fba-75b3d94a8296.jpg?1559591904", "key": "Mountain::a6b85474e90c", "main_colors": [], "name": "Mountain", "rarity": "common", "type_line": "Basic Land \u2014 Mountain"}, {"color_bucket": "U", "grades": {"aggro": 1.5, "all": 1.96, "bomb": 5.4, "diversity": 1.8, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/0/1/018e9fd1-3e7f-4909-bab1-3edb9c9e4326.jpg?1771343697", "key": "Mondo Gecko::562e318dac6b", "main_colors": ["U"], "name": "Mondo Gecko", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Lizard Mutant"}, {"color_bucket": "U", "grades": {"aggro": 1.6, "all": 2.27, "bomb": 7.05, "diversity": 0.6, "evasion": 1.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/0/1/01ca65e2-898e-4150-a6bf-e61b183fd98a.jpg?1771502603", "key": "Stockman, Mad Fly-entist::ff7d31e4e218", "main_colors": ["U"], "name": "Stockman, Mad Fly-entist", "rarity": "common", "type_line": "Legendary Creature \u2014 Insect Mutant Scientist"}, {"color_bucket": "B", "grades": {"aggro": 1.7, "all": 2.522, "bomb": 7.85, "diversity": 1.46, "evasion": 0.8, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/0/1/01cb8ded-7f77-4b75-b799-23e9f5efb513.jpg?1769005872", "key": "Savanti Romero, Time\u0027s Exile::0de7b6c962d8", "main_colors": ["B"], "name": "Savanti Romero, Time\u0027s Exile", "rarity": "rare", "type_line": "Legendary Creature \u2014 Demon Wizard"}, {"color_bucket": "R", "grades": {"aggro": 2.058, "all": 3.016, "bomb": 10.75, "diversity": 0.6, "evasion": 0.3, "removal": 1.373}, "image_url": "https://cards.scryfall.io/border_crop/front/0/2/025aafbc-5b24-4f5b-9b4a-81f6b9cb5ef3.jpg?1769006188", "key": "Slash, Reptile Rampager::93c470d56c28", "main_colors": ["R"], "name": "Slash, Reptile Rampager", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Berserker Turtle"}, {"color_bucket": "U", "grades": {"aggro": 2.0, "all": 0.8, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 1.0}, "image_url": "https://cards.scryfall.io/border_crop/front/0/2/026c499d-3d5b-4f65-a824-f78f146b82ef.jpg?1562895467", "key": "Negate::b51c4eff9b73", "main_colors": ["U"], "name": "Negate", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "G", "grades": {"aggro": 1.6, "all": 2.28, "bomb": 7.5, "diversity": 0.4, "evasion": 1.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/0/2/02f7281f-b50c-4a1c-a2fc-3caeb6ab7d41.jpg?1771502715", "key": "Michelangelo, Mutant BFF::9a871a55f714", "main_colors": ["G"], "name": "Michelangelo, Mutant BFF", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "M", "grades": {"aggro": 1.2, "all": 0.7, "bomb": 1.1, "diversity": 0.4, "evasion": 0.2, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/0/3/037fe188-3355-4724-b2eb-e2448fc55607.jpg?1771587021", "key": "Karai\u0027s Technique::63d230706546", "main_colors": ["B", "W"], "name": "Karai\u0027s Technique", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "R", "grades": {"aggro": 2.3, "all": 1.24, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 1.1}, "image_url": "https://cards.scryfall.io/border_crop/front/0/5/058490f4-0ada-45e6-b4f0-e433537f52d6.jpg?1771502642", "key": "Mouser Attack!::4494d9eadecc", "main_colors": ["R"], "name": "Mouser Attack!", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "R", "grades": {"aggro": 1.6, "all": 2.08, "bomb": 6.7, "diversity": 1.2, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/0/7/07959845-63ea-4932-ae8a-743fe00b572a.jpg?1771343969", "key": "Casey Jones, Vigilante::a4774aa8c8fd", "main_colors": ["R"], "name": "Casey Jones, Vigilante", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Human Berserker"}, {"color_bucket": "G", "grades": {"aggro": 0.7, "all": 0.747, "bomb": 1.1, "diversity": 1.3, "evasion": 0.335, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/0/8/081944c3-f1c8-4906-911d-a9133835218c.jpg?1771587126", "key": "New Generation\u0027s Technique::1da9ccc30871", "main_colors": ["G"], "name": "New Generation\u0027s Technique", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "B", "grades": {"aggro": 2.3, "all": 1.27, "bomb": 1.7, "diversity": 0.8, "evasion": 0.4, "removal": 1.15}, "image_url": "https://cards.scryfall.io/border_crop/front/0/8/0825a28f-f60b-4f80-83e3-cad6f9b266ce.jpg?1769005903", "key": "Ninja Teen::259bacb528cb", "main_colors": ["B"], "name": "Ninja Teen", "rarity": "rare", "type_line": "Enchantment \u2014 Class"}, {"color_bucket": "R", "grades": {"aggro": 1.208, "all": 0.781, "bomb": 0.8, "diversity": 0.2, "evasion": 0.235, "removal": 1.463}, "image_url": "https://cards.scryfall.io/border_crop/front/0/8/08b3af61-d516-45ca-aede-2f50ba23cb07.jpg?1771586935", "key": "Bot Bashing Time::3511c6b06a56", "main_colors": ["R"], "name": "Bot Bashing Time", "rarity": "common", "type_line": "Sorcery"}, {"color_bucket": "M", "grades": {"aggro": 1.4, "all": 1.444, "bomb": 4.8, "diversity": 0.2, "evasion": 0.22, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/0/9/0966b8ff-61d3-4394-a357-97c35f042a29.jpg?1771587036", "key": "Nobody::f51edca9f3ca", "main_colors": ["R", "U"], "name": "Nobody", "rarity": "common", "type_line": "Artifact Creature \u2014 Human Hero"}, {"color_bucket": "U", "grades": {"aggro": 0.545, "all": 0.846, "bomb": 1.0, "diversity": 1.0, "evasion": 0.635, "removal": 1.05}, "image_url": "https://cards.scryfall.io/border_crop/front/0/b/0b39c8fa-adbc-4ace-992d-45306e53bad4.jpg?1771343875", "key": "Turtles in Time::7d31f7ab0ae1", "main_colors": ["U"], "name": "Turtles in Time", "rarity": "mythic", "type_line": "Sorcery"}, {"color_bucket": "M", "grades": {"aggro": 1.5, "all": 1.74, "bomb": 5.9, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/0/d/0dded2d4-1640-4431-809e-403b51b27db6.jpg?1771342417", "key": "Karai, Future of the Foot::771d492d24c5", "main_colors": ["B", "W"], "name": "Karai, Future of the Foot", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Human Ninja"}, {"color_bucket": "W", "grades": {"aggro": 1.6, "all": 1.96, "bomb": 6.5, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/0/e/0e3a0a26-c163-4f31-bed8-1be52a35feea.jpg?1764512256", "key": "Leonardo, Sewer Samurai::defd36f375bb", "main_colors": ["W"], "name": "Leonardo, Sewer Samurai", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle Samurai"}, {"color_bucket": "M", "grades": {"aggro": 0.7, "all": 0.72, "bomb": 1.1, "diversity": 1.3, "evasion": 0.2, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/0/f/0f886117-aff3-4db7-9cf5-7cbe94c8cd02.jpg?1771424719", "key": "Lessons from Life::61efa63f98b5", "main_colors": ["G", "U"], "name": "Lessons from Life", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "R", "grades": {"aggro": 1.44, "all": 1.712, "bomb": 6.1, "diversity": 0.0, "evasion": 0.12, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/0/f/0fada65d-fd8d-4be9-b2bb-ea5cac78fdd7.jpg?1771586954", "key": "Rock Soldiers::33e9f9f56336", "main_colors": ["R"], "name": "Rock Soldiers", "rarity": "common", "type_line": "Artifact Creature \u2014 Elemental Soldier"}, {"color_bucket": "G", "grades": {"aggro": 1.4, "all": 1.096, "bomb": 2.2, "diversity": 0.8, "evasion": 0.58, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/0/f/0ffce972-bed9-445a-a9a0-4816f156d88d.jpg?1771342415", "key": "Cowabunga!::a1cbca16f4ac", "main_colors": ["G"], "name": "Cowabunga!", "rarity": "common", "type_line": "Sorcery"}, {"color_bucket": "M", "grades": {"aggro": 1.6, "all": 1.85, "bomb": 5.95, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/1/1/117b1341-2cf0-466e-b3a8-7e1afa42cd4c.jpg?1771586994", "key": "Baxter Stockman::6ee4f2b06f97", "main_colors": ["R", "U"], "name": "Baxter Stockman", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Human Scientist"}, {"color_bucket": "M", "grades": {"aggro": 2.482, "all": 2.586, "bomb": 6.8, "diversity": 0.8, "evasion": 1.526, "removal": 1.32}, "image_url": "https://cards.scryfall.io/border_crop/front/1/3/1308dadc-08a9-40bd-98a4-fb66d792e27d.jpg?1771587028", "key": "The Neutrinos::132c64855c98", "main_colors": ["R", "W"], "name": "The Neutrinos", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Elf Rebel"}, {"color_bucket": "W", "grades": {"aggro": 1.8, "all": 1.62, "bomb": 4.0, "diversity": 0.4, "evasion": 1.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/1/4/148e6acd-a96a-4bea-8cfe-a129cd8d1003.jpg?1769005558", "key": "Prehistoric Pet::f4478d8b24e0", "main_colors": ["W"], "name": "Prehistoric Pet", "rarity": "rare", "type_line": "Creature \u2014 Dinosaur Ninja"}, {"color_bucket": "U", "grades": {"aggro": 1.5, "all": 2.0, "bomb": 6.2, "diversity": 0.4, "evasion": 1.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/1/4/14e0892c-a556-43c3-974f-6be44188da2e.jpg?1771502589", "key": "Ray Fillet, Man Ray::f1cbd73b8553", "main_colors": ["U"], "name": "Ray Fillet, Man Ray", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Fish Mutant"}, {"color_bucket": "U", "grades": {"aggro": 1.1, "all": 1.16, "bomb": 3.2, "diversity": 0.0, "evasion": 1.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/1/4/14ff6944-fc47-4c90-b577-cad3a1355165.jpg?1771502831", "key": "Donatello, Way with Machines::fa82dfcf99b4", "main_colors": ["U"], "name": "Donatello, Way with Machines", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 1.738, "all": 2.296, "bomb": 7.55, "diversity": 0.6, "evasion": 0.414, "removal": 1.18}, "image_url": "https://cards.scryfall.io/border_crop/front/1/5/1515eed9-3b21-42f0-ab57-de5df19317af.jpg?1771586941", "key": "Old Hob, Alleycat Blues::be217718f82b", "main_colors": ["R"], "name": "Old Hob, Alleycat Blues", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Cat Mutant Rebel"}, {"color_bucket": "G", "grades": {"aggro": 1.4, "all": 3.483, "bomb": 13.65, "diversity": 1.04, "evasion": 0.726, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/1/5/1563592e-0f21-4488-a3ec-ca766386e423.jpg?1769006182", "key": "Groundchuck \u0026 Dirtbag::3bec38792372", "main_colors": ["G"], "name": "Groundchuck \u0026 Dirtbag", "rarity": "rare", "type_line": "Legendary Creature \u2014 Ox Mole Mutant"}, {"color_bucket": "C", "grades": {"aggro": 1.6, "all": 2.08, "bomb": 7.5, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/1/6/16ceb9da-cf42-4202-a3ae-265f24532c04.jpg?1771343976", "key": "Turtle Van::e081d9028cdf", "main_colors": [], "name": "Turtle Van", "rarity": "rare", "type_line": "Artifact \u2014 Vehicle"}, {"color_bucket": "R", "grades": {"aggro": 1.8, "all": 2.593, "bomb": 8.1, "diversity": 1.64, "evasion": 0.526, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/1/8/183c6c8d-3e5c-4a7b-bd5a-cbaa0a781a58.jpg?1771343621", "key": "Raphael, Ninja Destroyer::890e38b46803", "main_colors": ["R"], "name": "Raphael, Ninja Destroyer", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "G", "grades": {"aggro": 1.8, "all": 1.26, "bomb": 3.2, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/1/8/18477047-218d-4b2a-a086-37431b6a3025.jpg?1769006195", "key": "Michelangelo, Weirdness to 11::5873d14b5179", "main_colors": ["G"], "name": "Michelangelo, Weirdness to 11", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 1.087, "bomb": 1.9, "diversity": 1.5, "evasion": 0.435, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/1/c/1c244fc2-70f0-4149-b0d2-d49fc6bac2b0.jpg?1771587085", "key": "Dimension X::d975a5a4965a", "main_colors": [], "name": "Dimension X", "rarity": "common", "type_line": "Land"}, {"color_bucket": "C", "grades": {"aggro": 1.645, "all": 0.886, "bomb": 1.3, "diversity": 0.2, "evasion": 0.235, "removal": 1.05}, "image_url": "https://cards.scryfall.io/border_crop/front/1/f/1f9bd4da-4626-40ba-95f4-14e3de36f989.jpg?1769006428", "key": "The Ooze::223380995b7b", "main_colors": [], "name": "The Ooze", "rarity": "rare", "type_line": "Legendary Artifact"}, {"color_bucket": "M", "grades": {"aggro": 1.8, "all": 3.265, "bomb": 12.2, "diversity": 0.6, "evasion": 0.926, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/2/0/20882daf-a2ae-40ec-a363-8d564a2f3b2a.jpg?1771343801", "key": "Raph \u0026 Mikey, Troublemakers::fdd4cbe4e887", "main_colors": ["G", "R"], "name": "Raph \u0026 Mikey, Troublemakers", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "G", "grades": {"aggro": 1.9, "all": 1.604, "bomb": 4.3, "diversity": 0.6, "evasion": 0.42, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/2/1/2155537f-37b1-4121-9612-63781b461497.jpg?1771625173", "key": "Courier of Comestibles::0fc75359e430", "main_colors": ["G"], "name": "Courier of Comestibles", "rarity": "rare", "type_line": "Creature \u2014 Human Citizen"}, {"color_bucket": "U", "grades": {"aggro": 1.4, "all": 1.42, "bomb": 4.8, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/2/2/22b2d126-ddb4-413f-94ca-1ff39291c7c1.jpg?1771502973", "key": "Donatello, Gadget Master::8f3ac5d20690", "main_colors": ["U"], "name": "Donatello, Gadget Master", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 2.261, "all": 1.193, "bomb": 1.6, "diversity": 0.4, "evasion": 0.2, "removal": 1.505}, "image_url": "https://cards.scryfall.io/border_crop/front/2/4/243e392b-48b0-4e90-ae22-9a696f45e878.jpg?1771502635", "key": "Manhole Missile::c97cf976c8ae", "main_colors": ["R"], "name": "Manhole Missile", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 1.3, "all": 1.56, "bomb": 5.6, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/2/4/24bd571e-652a-4e7c-afc6-a45f0ccf62f6.jpg?1771342404", "key": "Foot Elite::1c4b9edbdb07", "main_colors": ["B", "W"], "name": "Foot Elite", "rarity": "common", "type_line": "Creature \u2014 Human Ninja"}, {"color_bucket": "R", "grades": {"aggro": 0.8, "all": 0.91, "bomb": 1.15, "diversity": 1.5, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/2/7/27619fa6-f9bf-4e9c-9d5e-bc0d050aacd6.jpg?1771345394", "key": "Raphael\u0027s Technique::75c6f67a1bee", "main_colors": ["R"], "name": "Raphael\u0027s Technique", "rarity": "rare", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 2.0, "all": 1.94, "bomb": 5.9, "diversity": 0.4, "evasion": 0.7, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/2/8/284f9012-a58d-41da-be7c-962dca052711.jpg?1769006390", "key": "Tokka \u0026 Rahzar, Terrible Twos::33889038dec7", "main_colors": ["B", "R"], "name": "Tokka \u0026 Rahzar, Terrible Twos", "rarity": "rare", "type_line": "Legendary Creature \u2014 Turtle Wolf Mutant"}, {"color_bucket": "C", "grades": {"aggro": 2.1, "all": 2.32, "bomb": 7.3, "diversity": 0.6, "evasion": 0.8, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/2/8/287f5ab0-b15b-4507-8a24-585f9a9841ad.jpg?1769006421", "key": "Technodrome::616781839fdb", "main_colors": [], "name": "Technodrome", "rarity": "mythic", "type_line": "Artifact Creature \u2014 Construct"}, {"color_bucket": "W", "grades": {"aggro": 1.1, "all": 0.58, "bomb": 0.8, "diversity": 0.2, "evasion": 0.1, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/2/8/2884abe5-80f4-4beb-850a-98f91ee929e3.jpg?1771343659", "key": "Leonardo\u0027s Technique::ef0dbcc9e7e9", "main_colors": ["W"], "name": "Leonardo\u0027s Technique", "rarity": "rare", "type_line": "Sorcery"}, {"color_bucket": "U", "grades": {"aggro": 1.5, "all": 1.97, "bomb": 6.45, "diversity": 0.2, "evasion": 0.6, "removal": 1.1}, "image_url": "https://cards.scryfall.io/border_crop/front/2/a/2ae30766-c858-4f4e-a042-14af55698cb2.jpg?1769005718", "key": "Renet, Temporal Apprentice::93363c730ec2", "main_colors": ["U"], "name": "Renet, Temporal Apprentice", "rarity": "rare", "type_line": "Legendary Creature \u2014 Human Wizard"}, {"color_bucket": "M", "grades": {"aggro": 1.7, "all": 1.1, "bomb": 2.9, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/2/c/2cb65388-dc6c-4e2a-93ac-49ea484849e9.jpg?1771502774", "key": "Mechanized Ninja Cavalry::c1bb270d18ba", "main_colors": ["R", "W"], "name": "Mechanized Ninja Cavalry", "rarity": "common", "type_line": "Artifact Creature \u2014 Robot Ninja"}, {"color_bucket": "R", "grades": {"aggro": 1.4, "all": 1.88, "bomb": 6.2, "diversity": 0.4, "evasion": 0.7, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/2/d/2dbe9207-06e8-4837-8227-0f960490771b.jpg?1771766034", "key": "Mutant Town Musicians::8315e41ef6f7", "main_colors": ["R"], "name": "Mutant Town Musicians", "rarity": "common", "type_line": "Creature \u2014 Mutant Bard Performer"}, {"color_bucket": "U", "grades": {"aggro": 1.7, "all": 0.92, "bomb": 1.1, "diversity": 0.4, "evasion": 0.2, "removal": 1.2}, "image_url": "https://cards.scryfall.io/border_crop/front/2/d/2ddfcc4d-dd5f-42f1-8f33-a8e8b5354534.jpg?1771502582", "key": "Mind Transfer Protocol::c7c7edd2f969", "main_colors": ["U"], "name": "Mind Transfer Protocol", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "B", "grades": {"aggro": 2.045, "all": 0.926, "bomb": 1.0, "diversity": 0.0, "evasion": 0.135, "removal": 1.45}, "image_url": "https://cards.scryfall.io/border_crop/front/2/e/2e4f2148-d398-4f3d-9c59-81c87b6a4588.jpg?1771586845", "key": "Death in the Family::2c37272e8c8c", "main_colors": ["B"], "name": "Death in the Family", "rarity": "uncommon", "type_line": "Instant"}, {"color_bucket": "G", "grades": {"aggro": 1.5, "all": 1.74, "bomb": 5.9, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/2/e/2e914c3d-2eed-48bf-af9a-a8998fd5111d.jpg?1771502708", "key": "Michelangelo, Game Master::2e6dd4103f62", "main_colors": ["G"], "name": "Michelangelo, Game Master", "rarity": "common", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "G", "grades": {"aggro": 1.4, "all": 1.55, "bomb": 5.85, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/2/e/2edc1d40-3154-4ec0-88c7-faf35fd5e560.jpg?1771502737", "key": "Ragamuffin Raptor::9dc56dd14422", "main_colors": ["G"], "name": "Ragamuffin Raptor", "rarity": "common", "type_line": "Creature \u2014 Dinosaur"}, {"color_bucket": "U", "grades": {"aggro": 1.4, "all": 1.58, "bomb": 4.3, "diversity": 1.3, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/3/1/31aa943f-c9db-43dc-8a72-7ef56f9f5c8b.jpg?1771502549", "key": "April, Reporter of the Weird::4ccd63d7de20", "main_colors": ["U"], "name": "April, Reporter of the Weird", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Human Detective"}, {"color_bucket": "U", "grades": {"aggro": 1.5, "all": 2.06, "bomb": 7.5, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/3/2/3271b821-8efc-49e2-96fd-c48e2b2585c6.jpg?1769005688", "key": "Donatello, Mutant Mechanic::0323b56c81f5", "main_colors": ["U"], "name": "Donatello, Mutant Mechanic", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "G", "grades": {"aggro": 1.9, "all": 1.92, "bomb": 5.9, "diversity": 0.4, "evasion": 0.7, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/3/6/3630d2ad-9bfe-4e86-addb-c4b620b52b14.jpg?1771343894", "key": "Mutagen Man, Living Ooze::b887d8411059", "main_colors": ["G"], "name": "Mutagen Man, Living Ooze", "rarity": "rare", "type_line": "Legendary Creature \u2014 Ooze Mutant"}, {"color_bucket": "B", "grades": {"aggro": 1.7, "all": 2.37, "bomb": 8.35, "diversity": 0.4, "evasion": 0.7, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/3/7/371ba16d-73f7-450c-8b1f-c05012a4ca93.jpg?1771586838", "key": "Bebop, Warthog Warrior::dd7c34ce5054", "main_colors": ["B"], "name": "Bebop, Warthog Warrior", "rarity": "common", "type_line": "Legendary Creature \u2014 Boar Mutant Warrior"}, {"color_bucket": "M", "grades": {"aggro": 1.4, "all": 1.93, "bomb": 7.75, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/3/7/375c91a3-53c4-4f2d-bf7b-2c79a219d3ae.jpg?1771587049", "key": "Punk Frogs::b623237931f7", "main_colors": ["G", "U"], "name": "Punk Frogs", "rarity": "common", "type_line": "Creature \u2014 Frog Mutant Rebel"}, {"color_bucket": "B", "grades": {"aggro": 1.7, "all": 1.26, "bomb": 3.2, "diversity": 0.2, "evasion": 0.6, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/3/7/37a497b8-e908-4ddc-996e-a8470df72afb.jpg?1760102707", "key": "Super Shredder::39c1c5aea1c1", "main_colors": ["B"], "name": "Super Shredder", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Human"}, {"color_bucket": "U", "grades": {"aggro": -0.1, "all": 1.36, "bomb": 4.4, "diversity": 1.4, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/3/9/3942f813-6241-49f5-8df3-e60e2e332410.jpg?1771343690", "key": "Krang, Master Mind::f68e6fa2def6", "main_colors": ["U"], "name": "Krang, Master Mind", "rarity": "rare", "type_line": "Legendary Artifact Creature \u2014 Utrom Warrior"}, {"color_bucket": "M", "grades": {"aggro": 1.3, "all": 1.56, "bomb": 5.6, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/3/9/397036c0-57e7-40e2-a8cb-06ef54077bb4.jpg?1771343795", "key": "Raph \u0026 Leo, Sibling Rivals::a14233a253a9", "main_colors": ["R", "W"], "name": "Raph \u0026 Leo, Sibling Rivals", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "G", "grades": {"aggro": 0.9, "all": 0.866, "bomb": 1.45, "diversity": 0.8, "evasion": 0.68, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/3/a/3a63c06a-7c59-4b72-b916-e5b6ad78c684.jpg?1769006772", "key": "Michelangelo\u0027s Technique::20bcdef015ee", "main_colors": ["G"], "name": "Michelangelo\u0027s Technique", "rarity": "rare", "type_line": "Sorcery"}, {"color_bucket": "M", "grades": {"aggro": 1.2, "all": 1.56, "bomb": 5.6, "diversity": 0.0, "evasion": 0.5, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/3/a/3a74a878-7fc4-44a6-ac4a-0eb964a56e77.jpg?1771343775", "key": "Don \u0026 Raph, Hard Science::c273b601a679", "main_colors": ["R", "U"], "name": "Don \u0026 Raph, Hard Science", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "W", "grades": {"aggro": 1.54, "all": 1.652, "bomb": 5.1, "diversity": 0.4, "evasion": 0.32, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/3/a/3ae61336-a4ee-40cd-9a18-392d96b873a4.jpg?1769685362", "key": "Turncoat Kunoichi::8141f48b1c32", "main_colors": ["W"], "name": "Turncoat Kunoichi", "rarity": "rare", "type_line": "Creature \u2014 Mutant Ninja Fox"}, {"color_bucket": "R", "grades": {"aggro": 1.9, "all": 1.44, "bomb": 4.0, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/3/b/3b303ea3-9f4d-4c28-9446-285a23f841a0.jpg?1769006169", "key": "Ravenous Robots::23da8ed7f089", "main_colors": ["R"], "name": "Ravenous Robots", "rarity": "rare", "type_line": "Artifact Creature \u2014 Robot"}, {"color_bucket": "U", "grades": {"aggro": 1.7, "all": 2.19, "bomb": 7.55, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/3/c/3c2d8b09-8694-45ab-be01-f8dc17378cf0.jpg?1771586807", "key": "Metalhead::561bd5b54c0b", "main_colors": ["U"], "name": "Metalhead", "rarity": "uncommon", "type_line": "Legendary Artifact Creature \u2014 Robot Turtle"}, {"color_bucket": "U", "grades": {"aggro": 0.7, "all": 0.78, "bomb": 1.1, "diversity": 1.6, "evasion": 0.2, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/3/d/3d3d0a9a-3bde-451f-9d5a-af6c2a393953.jpg?1771587119", "key": "Donatello\u0027s Technique::327b065de368", "main_colors": ["U"], "name": "Donatello\u0027s Technique", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "B", "grades": {"aggro": 2.3, "all": 1.325, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 1.525}, "image_url": "https://cards.scryfall.io/border_crop/front/3/f/3fdec16f-77f5-4792-9698-b9099a204028.jpg?1771586922", "key": "Stomped by the Foot::124b5a359c3f", "main_colors": ["B"], "name": "Stomped by the Foot", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "G", "grades": {"aggro": 1.5, "all": 0.85, "bomb": 1.1, "diversity": 0.2, "evasion": 0.6, "removal": 0.85}, "image_url": "https://cards.scryfall.io/border_crop/front/4/0/4079ca90-dcc3-4184-9dfc-a626e0776332.jpg?1769006224", "key": "Turtle Power!::0cca5fb62da1", "main_colors": ["G"], "name": "Turtle Power!", "rarity": "rare", "type_line": "Enchantment"}, {"color_bucket": "R", "grades": {"aggro": 1.9, "all": 1.58, "bomb": 4.3, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/4/0/40b9b1d0-b7d1-473e-b6a9-a29d527c2f35.jpg?1771502679", "key": "Wingnut, Bat on the Belfry::337293e9b1e0", "main_colors": ["R"], "name": "Wingnut, Bat on the Belfry", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Bat Mutant"}, {"color_bucket": "M", "grades": {"aggro": 1.6, "all": 2.47, "bomb": 8.85, "diversity": 0.2, "evasion": 1.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/4/1/41439cfe-bb3e-42f3-9d81-de9db537ce68.jpg?1769006359", "key": "North Wind Avatar::5435615d77b4", "main_colors": ["R", "U"], "name": "North Wind Avatar", "rarity": "mythic", "type_line": "Creature \u2014 Dragon Spirit Avatar"}, {"color_bucket": "B", "grades": {"aggro": 1.245, "all": 0.916, "bomb": 1.1, "diversity": 0.4, "evasion": 0.335, "removal": 1.5}, "image_url": "https://cards.scryfall.io/border_crop/front/4/2/4208f96f-49ea-46d9-b6fc-2093ded1fadb.jpg?1771343703", "key": "Shredder\u0027s Technique::1518e4a2a5d9", "main_colors": ["B"], "name": "Shredder\u0027s Technique", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "M", "grades": {"aggro": 1.5, "all": 1.8, "bomb": 6.2, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/4/2/42cdb88d-675a-43bb-b85c-51c4cc526315.jpg?1771587057", "key": "Putrid Pals::b868c88eed81", "main_colors": ["B", "G"], "name": "Putrid Pals", "rarity": "common", "type_line": "Creature \u2014 Human Ooze Mutant"}, {"color_bucket": "B", "grades": {"aggro": 1.7, "all": 2.29, "bomb": 8.85, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/4/3/43c80d9e-0180-491a-ab08-2ba00f273604.jpg?1771502953", "key": "Shredder, Unrelenting::d5582da84b93", "main_colors": ["B"], "name": "Shredder, Unrelenting", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Human Ninja"}, {"color_bucket": "B", "grades": {"aggro": 1.04, "all": 0.512, "bomb": 0.5, "diversity": 0.0, "evasion": 0.12, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/4/4/44443ad2-ef8c-4106-ba1b-ee3fb6fd8b17.jpg?1771586832", "key": "Anchovy \u0026 Banana Pizza::b7461f642041", "main_colors": ["B"], "name": "Anchovy \u0026 Banana Pizza", "rarity": "common", "type_line": "Artifact \u2014 Food"}, {"color_bucket": "M", "grades": {"aggro": 2.0, "all": 1.9, "bomb": 5.4, "diversity": 0.8, "evasion": 0.4, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/4/5/453f1766-c369-423a-8ce6-f6c25753125a.jpg?1771345027", "key": "Dark Leo \u0026 Shredder::b01a7dcf0f5d", "main_colors": ["B", "W"], "name": "Dark Leo \u0026 Shredder", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle Human"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 1.087, "bomb": 1.9, "diversity": 1.5, "evasion": 0.435, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/4/5/45e68113-3f05-4547-947d-4cb9ebfa73c7.jpg?1771587092", "key": "Foot Headquarters::c2cdb5ee5f4e", "main_colors": [], "name": "Foot Headquarters", "rarity": "common", "type_line": "Land"}, {"color_bucket": "M", "grades": {"aggro": 1.3, "all": 1.76, "bomb": 5.6, "diversity": 0.2, "evasion": 1.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/4/6/4673c261-8c4e-42c1-a4c9-d40bd7ce63b5.jpg?1771343782", "key": "Splinter, Radical Rat::45df4c829374", "main_colors": ["B", "W"], "name": "Splinter, Radical Rat", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Rat"}, {"color_bucket": "U", "grades": {"aggro": 0.7, "all": 0.57, "bomb": 0.85, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/4/9/4996c35b-892a-4e9e-8337-cc656d8cecf8.jpg?1771343677", "key": "Kitsune\u0027s Technique::a205cc5039b6", "main_colors": ["U"], "name": "Kitsune\u0027s Technique", "rarity": "rare", "type_line": "Instant"}, {"color_bucket": "U", "grades": {"aggro": 1.0, "all": 1.31, "bomb": 2.3, "diversity": 1.0, "evasion": 1.0, "removal": 1.25}, "image_url": "https://cards.scryfall.io/border_crop/front/4/a/4af284ba-fa54-43c5-8c76-3e1128957452.jpg?1771586820", "key": "Retro-Mutation::b0eb2634b068", "main_colors": ["U"], "name": "Retro-Mutation", "rarity": "common", "type_line": "Enchantment \u2014 Aura"}, {"color_bucket": "W", "grades": {"aggro": 1.8, "all": 1.13, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 1.05}, "image_url": "https://cards.scryfall.io/border_crop/front/4/c/4cbcb622-1aff-460f-b8fa-4502d991e0ad.jpg?1769005523", "key": "Leader\u0027s Talent::7224e5e6a9ae", "main_colors": ["W"], "name": "Leader\u0027s Talent", "rarity": "rare", "type_line": "Enchantment \u2014 Class"}, {"color_bucket": "B", "grades": {"aggro": 1.1, "all": 1.12, "bomb": 4.0, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/4/e/4e712d5c-d6fe-40bb-b8e5-5f50c6ea8d4f.jpg?1769005736", "key": "Madame Null, Power Broker::94b4cd3392f6", "main_colors": ["B"], "name": "Madame Null, Power Broker", "rarity": "rare", "type_line": "Legendary Creature \u2014 Demon Advisor"}, {"color_bucket": "U", "grades": {"aggro": 1.7, "all": 1.3, "bomb": 2.9, "diversity": 0.2, "evasion": 1.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/5/0/50c4e65f-00dc-4fc5-bd5c-8482c2848f4c.jpg?1771586801", "key": "Fugitive Droid::22783d51981d", "main_colors": ["U"], "name": "Fugitive Droid", "rarity": "uncommon", "type_line": "Artifact Creature \u2014 Robot Scientist"}, {"color_bucket": "C", "grades": {"aggro": 0.8, "all": 3.72, "bomb": 15.4, "diversity": 0.2, "evasion": 1.6, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/5/1/51409265-aa99-423e-be34-f62e122dbac3.jpg?1771344011", "key": "Krang, Utrom Warlord::796f2c82c0bb", "main_colors": [], "name": "Krang, Utrom Warlord", "rarity": "mythic", "type_line": "Legendary Artifact Creature \u2014 Utrom Robot"}, {"color_bucket": "U", "grades": {"aggro": 1.2, "all": 1.752, "bomb": 5.6, "diversity": 1.26, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/5/1/519359e5-72d8-4d3d-887e-cd7208aa3f95.jpg?1771345038", "key": "April O\u0027Neil, Hacktivist::12015e5d9ffa", "main_colors": ["U"], "name": "April O\u0027Neil, Hacktivist", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Human Scientist"}, {"color_bucket": "U", "grades": {"aggro": 1.6, "all": 0.76, "bomb": 0.8, "diversity": 0.2, "evasion": 0.1, "removal": 1.1}, "image_url": "https://cards.scryfall.io/border_crop/front/5/2/52e99505-17dc-4051-99f6-e23559fc6c95.jpg?1771586826", "key": "Return to the Sewers::b9e598a6a5e9", "main_colors": ["U"], "name": "Return to the Sewers", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 1.8, "all": 2.662, "bomb": 10.4, "diversity": 0.2, "evasion": 0.1, "removal": 0.81}, "image_url": "https://cards.scryfall.io/border_crop/front/5/3/535461bd-f763-408b-816f-64b7bfb9210d.jpg?1760102796", "key": "Bebop \u0026 Rocksteady::3aa82c10747d", "main_colors": ["B", "G"], "name": "Bebop \u0026 Rocksteady", "rarity": "rare", "type_line": "Legendary Creature \u2014 Boar Rhino Mutant"}, {"color_bucket": "W", "grades": {"aggro": 1.6, "all": 1.32, "bomb": 2.3, "diversity": 1.2, "evasion": 0.6, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/5/3/53c9184f-fa56-447e-b58d-a17eb5485cd3.jpg?1760102549", "key": "Turtles Forever::4402ba2a9b91", "main_colors": ["W"], "name": "Turtles Forever", "rarity": "rare", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 1.9, "all": 1.6, "bomb": 4.8, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/5/3/53f1ae0b-e3fd-467a-9fc2-a5d6cce47765.jpg?1771343788", "key": "Mikey \u0026 Leo, Chaos \u0026 Order::f273731bc2e1", "main_colors": ["G", "W"], "name": "Mikey \u0026 Leo, Chaos \u0026 Order", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 1.261, "all": 0.853, "bomb": 1.1, "diversity": 0.4, "evasion": 0.2, "removal": 1.303}, "image_url": "https://cards.scryfall.io/border_crop/front/5/6/562395ef-fb28-4b34-b03b-5dbf0507fdc3.jpg?1771503012", "key": "Jennika\u0027s Technique::f105c6f26a78", "main_colors": ["R"], "name": "Jennika\u0027s Technique", "rarity": "uncommon", "type_line": "Instant"}, {"color_bucket": "G", "grades": {"aggro": 1.1, "all": 1.667, "bomb": 4.3, "diversity": 1.1, "evasion": 1.235, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/5/6/56b62da5-80eb-4058-bcad-b7e2b374a9ba.jpg?1771343901", "key": "Transdimensional Bovine::67809358ba50", "main_colors": ["G"], "name": "Transdimensional Bovine", "rarity": "rare", "type_line": "Creature \u2014 Ox Avatar"}, {"color_bucket": "W", "grades": {"aggro": 1.8, "all": 1.32, "bomb": 3.5, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/5/a/5aaae49a-75bf-44fd-b819-415cbcfa0827.jpg?1771345332", "key": "Leonardo, Cutting Edge::07d815c61ac1", "main_colors": ["W"], "name": "Leonardo, Cutting Edge", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 1.6, "all": 0.76, "bomb": 1.3, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/5/d/5d3dc219-f024-49de-b88d-dc1e9e84184c.jpg?1771342392", "key": "Hard-Won Jitte::5c05948bc223", "main_colors": ["R"], "name": "Hard-Won Jitte", "rarity": "uncommon", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "W", "grades": {"aggro": 1.545, "all": 1.376, "bomb": 2.5, "diversity": 1.0, "evasion": 0.635, "removal": 1.2}, "image_url": "https://cards.scryfall.io/border_crop/front/5/d/5d9a4f9a-1e3a-4de8-a7c0-7158c6703b4e.jpg?1771586776", "key": "Uneasy Alliance::2fb735849132", "main_colors": ["W"], "name": "Uneasy Alliance", "rarity": "common", "type_line": "Enchantment \u2014 Aura"}, {"color_bucket": "W", "grades": {"aggro": 1.5, "all": 1.4, "bomb": 3.8, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/5/d/5dd5369c-174c-450b-b776-553866787f8f.jpg?1771502533", "key": "Mighty Mutanimals::9bdfecc05b46", "main_colors": ["W"], "name": "Mighty Mutanimals", "rarity": "uncommon", "type_line": "Creature \u2014 Mutant Rebel"}, {"color_bucket": "C", "grades": {"aggro": 1.6, "all": 1.167, "bomb": 1.3, "diversity": 1.1, "evasion": 1.235, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/5/d/5df90940-15ea-418c-8547-6c75d69ec6d3.jpg?1771424732", "key": "Escape Tunnel::d51aba33c158", "main_colors": [], "name": "Escape Tunnel", "rarity": "common", "type_line": "Land"}, {"color_bucket": "M", "grades": {"aggro": 1.3, "all": 2.77, "bomb": 11.25, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/5/f/5fbf2786-c591-49f8-8cfe-7137f02d0bb9.jpg?1771343465", "key": "Krang \u0026 Shredder::c338ca384081", "main_colors": ["B", "U"], "name": "Krang \u0026 Shredder", "rarity": "rare", "type_line": "Legendary Creature \u2014 Utrom Human Ninja"}, {"color_bucket": "B", "grades": {"aggro": 1.9, "all": 1.704, "bomb": 3.8, "diversity": 0.6, "evasion": 1.42, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/6/0/600e3bc1-9777-4057-a11e-4f61582636c6.jpg?1771586853", "key": "Dream Beavers::f5258b479de7", "main_colors": ["B"], "name": "Dream Beavers", "rarity": "uncommon", "type_line": "Creature \u2014 Beaver Nightmare"}, {"color_bucket": "M", "grades": {"aggro": 1.8, "all": 1.6, "bomb": 5.3, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/6/0/608a13b4-0b94-4be5-ac4b-e939901e8419.jpg?1771502784", "key": "Mouser Mark III::8437eef41ebe", "main_colors": ["R", "U"], "name": "Mouser Mark III", "rarity": "common", "type_line": "Artifact Creature \u2014 Robot"}, {"color_bucket": "B", "grades": {"aggro": 1.4, "all": 1.78, "bomb": 6.2, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/6/1/61e40a18-6cc8-436d-826b-1cf8cd037df3.jpg?1771586860", "key": "Foot Mystic::ef8f3cb514b3", "main_colors": ["B"], "name": "Foot Mystic", "rarity": "common", "type_line": "Creature \u2014 Human Ninja Warlock"}, {"color_bucket": "M", "grades": {"aggro": 1.7, "all": 2.144, "bomb": 6.8, "diversity": 0.8, "evasion": 0.52, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/6/3/6353df1a-9a1b-41fd-985b-8c8acba36c23.jpg?1769006263", "key": "Mikey \u0026 Don, Party Planners::22031fa5e166", "main_colors": ["G", "U"], "name": "Mikey \u0026 Don, Party Planners", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "W", "grades": {"aggro": 2.76, "all": 2.172, "bomb": 5.4, "diversity": 0.6, "evasion": 1.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/6/4/6445b690-71ce-4371-ae9c-bac0e70dda81.jpg?1769005579", "key": "Triceraton Commander::b9cd326671ea", "main_colors": ["W"], "name": "Triceraton Commander", "rarity": "mythic", "type_line": "Creature \u2014 Dinosaur Soldier"}, {"color_bucket": "W", "grades": {"aggro": 1.5, "all": 1.69, "bomb": 5.65, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/6/4/64c6cf57-bc43-4b36-a01c-f4b2fadc8ce2.jpg?1771502884", "key": "Jennika, Bad Apple Big Sister::71464459ab95", "main_colors": ["W"], "name": "Jennika, Bad Apple Big Sister", "rarity": "common", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "B", "grades": {"aggro": 1.9, "all": 1.6, "bomb": 4.8, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/6/5/654e2646-78ac-4b08-bed1-3c71355d55fc.jpg?1771586897", "key": "Paramecia Coloniex::800b46adf005", "main_colors": ["B"], "name": "Paramecia Coloniex", "rarity": "uncommon", "type_line": "Creature \u2014 Zombie Worm"}, {"color_bucket": "R", "grades": {"aggro": 1.737, "all": 2.344, "bomb": 7.3, "diversity": 0.6, "evasion": 0.911, "removal": 1.17}, "image_url": "https://cards.scryfall.io/border_crop/front/6/5/65c50cfe-1452-407c-a651-6fc8bcc92a98.jpg?1771502850", "key": "Raphael, Most Attitude::b68f19ad2097", "main_colors": ["R"], "name": "Raphael, Most Attitude", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "M", "grades": {"aggro": 1.8, "all": 1.58, "bomb": 4.8, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/6/6/66081fd3-2457-4602-96c4-3075ddfec1c2.jpg?1771587014", "key": "Ice Cream Kitty::bbebf52e48d2", "main_colors": ["B", "G"], "name": "Ice Cream Kitty", "rarity": "common", "type_line": "Artifact Creature \u2014 Food Cat Mutant"}, {"color_bucket": "U", "grades": {"aggro": 1.1, "all": 2.35, "bomb": 10.15, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/6/6/6634e5d1-b16c-4aba-aab1-e3991022e5c6.jpg?1771343838", "key": "Kitsune, Dragon\u0027s Daughter::e6e66c381679", "main_colors": ["U"], "name": "Kitsune, Dragon\u0027s Daughter", "rarity": "rare", "type_line": "Legendary Creature \u2014 Fox Warlock Avatar"}, {"color_bucket": "U", "grades": {"aggro": 1.3, "all": 1.58, "bomb": 6.1, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/6/8/683cfef0-f164-4db8-b83f-79eb804e50ae.jpg?1771502569", "key": "Donatello, Turtle Techie::f04137d8fc56", "main_colors": ["U"], "name": "Donatello, Turtle Techie", "rarity": "common", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 1.3, "all": 1.4, "bomb": 4.8, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/6/a/6af50b50-3776-4383-b493-7c5dd732c965.jpg?1769006162", "key": "Raphael, the Nightwatcher::e2b8af39fcae", "main_colors": ["R"], "name": "Raphael, the Nightwatcher", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "U", "grades": {"aggro": 0.8, "all": 0.68, "bomb": 1.4, "diversity": 0.6, "evasion": 0.3, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/6/c/6c517308-831b-4e41-a82c-02ddf6383a0c.jpg?1771586788", "key": "Bespoke B\u014d::10a3d1ddb758", "main_colors": ["U"], "name": "Bespoke B\u014d", "rarity": "uncommon", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "M", "grades": {"aggro": 1.3, "all": 1.4, "bomb": 4.8, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/6/d/6d35cb39-8832-4cf1-be73-8de49fbea529.jpg?1771502794", "key": "Slithering Cryptid::944f6980f80d", "main_colors": ["G", "U"], "name": "Slithering Cryptid", "rarity": "common", "type_line": "Creature \u2014 Fish Mutant"}, {"color_bucket": "U", "grades": {"aggro": 1.3, "all": 1.24, "bomb": 4.0, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/6/d/6da89625-5278-49d4-813b-a1a631f114f5.jpg?1771502610", "key": "Utrom Scientists::5fd40b735894", "main_colors": ["U"], "name": "Utrom Scientists", "rarity": "common", "type_line": "Artifact Creature \u2014 Utrom Robot Scientist"}, {"color_bucket": "C", "grades": {"aggro": 1.0, "all": 1.91, "bomb": 6.75, "diversity": 0.4, "evasion": 1.2, "removal": 0.2}, "image_url": "https://cards.scryfall.io/border_crop/front/6/e/6e118fc5-b0ae-4592-8292-d611856ae203.jpg?1771587078", "key": "Turtle Blimp::5d8bb5637e94", "main_colors": [], "name": "Turtle Blimp", "rarity": "uncommon", "type_line": "Artifact \u2014 Vehicle"}, {"color_bucket": "B", "grades": {"aggro": 1.8, "all": 1.44, "bomb": 4.5, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/7/0/70faf7d8-008a-454a-a21b-702aa661b8f9.jpg?1771586928", "key": "Tunnel Rats::900b8065e7dd", "main_colors": ["B"], "name": "Tunnel Rats", "rarity": "common", "type_line": "Creature \u2014 Rat"}, {"color_bucket": "B", "grades": {"aggro": 0.8, "all": 0.7, "bomb": 1.4, "diversity": 0.6, "evasion": 0.3, "removal": 0.4}, "image_url": "https://cards.scryfall.io/border_crop/front/7/1/7111e3e9-7175-4231-976c-c73e7d4cb40d.jpg?1771345403", "key": "Splinter\u0027s Technique::68b5cbb058c9", "main_colors": ["B"], "name": "Splinter\u0027s Technique", "rarity": "rare", "type_line": "Sorcery"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 1.087, "bomb": 1.9, "diversity": 1.5, "evasion": 0.435, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/7/1/71597acf-1ce6-46a8-b6c0-88755c8a377c.jpg?1771587098", "key": "Illegitimate Business::ef93a757ff42", "main_colors": [], "name": "Illegitimate Business", "rarity": "common", "type_line": "Land"}, {"color_bucket": "W", "grades": {"aggro": 1.645, "all": 0.836, "bomb": 0.55, "diversity": 0.2, "evasion": 0.235, "removal": 1.55}, "image_url": "https://cards.scryfall.io/border_crop/front/7/2/72388199-85fa-4eba-9a9c-c2904e6da9ed.jpg?1771502482", "key": "Grounded for Life::a19cea9d6bda", "main_colors": ["W"], "name": "Grounded for Life", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 1.06, "all": 1.248, "bomb": 1.75, "diversity": 1.0, "evasion": 0.68, "removal": 1.75}, "image_url": "https://cards.scryfall.io/border_crop/front/7/2/72ab3ccf-3ddb-4dd1-9cfb-98802a18d954.jpg?1771603465", "key": "The Last Ronin::a772266de5e0", "main_colors": ["B", "G"], "name": "The Last Ronin", "rarity": "mythic", "type_line": "Enchantment \u2014 Saga"}, {"color_bucket": "B", "grades": {"aggro": 0.7, "all": 0.5, "bomb": 1.1, "diversity": 0.4, "evasion": 0.2, "removal": 0.1}, "image_url": "https://cards.scryfall.io/border_crop/front/7/2/72fadf47-2e0b-4b24-b1bc-7c86780716b6.jpg?1771342364", "key": "Shredder\u0027s Revenge::e0af8867ddd2", "main_colors": ["B"], "name": "Shredder\u0027s Revenge", "rarity": "common", "type_line": "Sorcery"}, {"color_bucket": "W", "grades": {"aggro": 1.545, "all": 0.776, "bomb": 0.5, "diversity": 0.0, "evasion": 0.135, "removal": 1.7}, "image_url": "https://cards.scryfall.io/border_crop/front/7/3/73475d29-2673-4614-86d3-404232426aa8.jpg?1706241505", "key": "Make Your Move::3f7cf7102041", "main_colors": ["W"], "name": "Make Your Move", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "W", "grades": {"aggro": 2.2, "all": 1.147, "bomb": 1.6, "diversity": 0.4, "evasion": 0.335, "removal": 1.2}, "image_url": "https://cards.scryfall.io/border_crop/front/7/3/735b540b-b472-46fa-a232-d444cabf6c4c.jpg?1771502490", "key": "Hamato Guardian Stance::6a920a602cfe", "main_colors": ["W"], "name": "Hamato Guardian Stance", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "C", "grades": {"aggro": 1.061, "all": 1.28, "bomb": 2.0, "diversity": 1.9, "evasion": 0.635, "removal": 0.805}, "image_url": "https://cards.scryfall.io/border_crop/front/7/3/73a5749e-eec1-4dfc-acbc-b6e4fcabe9a4.jpg?1771343963", "key": "Weather Maker::16ab39251e7b", "main_colors": [], "name": "Weather Maker", "rarity": "rare", "type_line": "Artifact"}, {"color_bucket": "G", "grades": {"aggro": 1.745, "all": 2.636, "bomb": 8.6, "diversity": 0.4, "evasion": 0.835, "removal": 1.6}, "image_url": "https://cards.scryfall.io/border_crop/front/7/4/745b5a3b-6fbb-467c-91a8-ebc2bfe144c4.jpg?1771343888", "key": "Leatherhead, Swamp Stalker::70a7170dbf75", "main_colors": ["G"], "name": "Leatherhead, Swamp Stalker", "rarity": "rare", "type_line": "Legendary Creature \u2014 Crocodile Mutant Rogue"}, {"color_bucket": "W", "grades": {"aggro": 1.6, "all": 1.34, "bomb": 3.2, "diversity": 0.2, "evasion": 1.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/7/8/78c55706-4d00-4b97-965c-0b2d0963e59d.jpg?1771513766", "key": "Featherbrained Filcher::cb695a257f4b", "main_colors": ["W"], "name": "Featherbrained Filcher", "rarity": "uncommon", "type_line": "Creature \u2014 Bird Mutant"}, {"color_bucket": "W", "grades": {"aggro": 1.44, "all": 1.612, "bomb": 3.8, "diversity": 0.4, "evasion": 1.32, "removal": 1.1}, "image_url": "https://cards.scryfall.io/border_crop/front/7/a/7a4f1ccc-2225-4cd0-abef-0eb7a8eae9cf.jpg?1771586885", "key": "Koya, Death from Above::86642391ae41", "main_colors": ["W"], "name": "Koya, Death from Above", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Bird"}, {"color_bucket": "U", "grades": {"aggro": 1.7, "all": 1.42, "bomb": 3.5, "diversity": 0.2, "evasion": 1.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/7/c/7c375190-f81b-4ab1-a1b6-fe432796821f.jpg?1771502556", "key": "Buzz Bots::ef10ff6e8c96", "main_colors": ["U"], "name": "Buzz Bots", "rarity": "common", "type_line": "Artifact Creature \u2014 Robot Insect"}, {"color_bucket": "M", "grades": {"aggro": 1.7, "all": 1.58, "bomb": 4.8, "diversity": 0.2, "evasion": 0.6, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/7/d/7df26085-eedb-4bdd-a60a-aabfbe9c3157.jpg?1771342425", "key": "Genghis Frog::b899930b25e9", "main_colors": ["G", "U"], "name": "Genghis Frog", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Frog Mutant Rogue"}, {"color_bucket": "M", "grades": {"aggro": 1.538, "all": 2.356, "bomb": 8.85, "diversity": 0.2, "evasion": 0.214, "removal": 0.98}, "image_url": "https://cards.scryfall.io/border_crop/front/8/0/807ed47f-53a6-40e5-a1d2-82414299c5e1.jpg?1771343749", "key": "Don \u0026 Leo, Problem Solvers::504db8672a5e", "main_colors": ["U", "W"], "name": "Don \u0026 Leo, Problem Solvers", "rarity": "rare", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 2.4, "all": 1.913, "bomb": 4.9, "diversity": 0.8, "evasion": 0.565, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/8/0/808a5bc0-0999-47cf-854c-30db6277efe5.jpg?1760114588", "key": "Casey Jones, Jury-Rig Justiciar::466e0c258f20", "main_colors": ["R"], "name": "Casey Jones, Jury-Rig Justiciar", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Human Berserker"}, {"color_bucket": "G", "grades": {"aggro": 1.145, "all": 0.756, "bomb": 0.8, "diversity": 0.2, "evasion": 0.235, "removal": 1.4}, "image_url": "https://cards.scryfall.io/border_crop/front/8/7/8763e0ee-a48e-424f-8bce-132582d5944b.jpg?1771342410", "key": "Mutant Chain Reaction::135b5d0e6f6b", "main_colors": ["G"], "name": "Mutant Chain Reaction", "rarity": "common", "type_line": "Sorcery"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 1.087, "bomb": 1.9, "diversity": 1.5, "evasion": 0.435, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/8/8/8817a1d6-ef39-4e7c-8277-74aea012803b.jpg?1771587112", "key": "TCRI Building::eda6f327b1cf", "main_colors": [], "name": "TCRI Building", "rarity": "common", "type_line": "Land"}, {"color_bucket": "R", "grades": {"aggro": 1.661, "all": 0.833, "bomb": 1.3, "diversity": 0.2, "evasion": 0.1, "removal": 0.905}, "image_url": "https://cards.scryfall.io/border_crop/front/8/a/8aae3bd6-a935-44a5-aa4d-a525b00cbf50.jpg?1771502649", "key": "Mouser Foundry::80d645db63fd", "main_colors": ["R"], "name": "Mouser Foundry", "rarity": "common", "type_line": "Artifact"}, {"color_bucket": "W", "grades": {"aggro": 1.9, "all": 1.843, "bomb": 4.8, "diversity": 0.4, "evasion": 1.415, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/8/b/8b1982ea-686b-4acd-b677-47571430efb0.jpg?1771586740", "key": "April O\u0027Neil, Kunoichi Trainee::578c98174c0f", "main_colors": ["W"], "name": "April O\u0027Neil, Kunoichi Trainee", "rarity": "common", "type_line": "Legendary Creature \u2014 Human Ninja"}, {"color_bucket": "C", "grades": {"aggro": 2.7, "all": 1.805, "bomb": 4.8, "diversity": 0.4, "evasion": 0.2, "removal": 0.925}, "image_url": "https://cards.scryfall.io/border_crop/front/8/b/8bae4950-bf6d-4e96-91f9-26d27021b748.jpg?1771343919", "key": "Chrome Dome::efb4045ee706", "main_colors": [], "name": "Chrome Dome", "rarity": "rare", "type_line": "Artifact Creature \u2014 Robot Ninja"}, {"color_bucket": "B", "grades": {"aggro": 1.6, "all": 2.0, "bomb": 5.7, "diversity": 0.6, "evasion": 1.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/8/d/8d1a9c8a-d0b6-4d83-a168-8078de4b14c7.jpg?1771586872", "key": "Lord Dregg, Insect Invader::81d04c031d31", "main_colors": ["B"], "name": "Lord Dregg, Insect Invader", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Insect Warrior"}, {"color_bucket": "B", "grades": {"aggro": 1.7, "all": 2.3, "bomb": 8.1, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/8/f/8f946b3d-7d2a-4210-a909-d16078757e3b.jpg?1769006593", "key": "Shark Shredder, Killer Clone::5c354e792ac1", "main_colors": ["B"], "name": "Shark Shredder, Killer Clone", "rarity": "rare", "type_line": "Legendary Creature \u2014 Shark Octopus Ninja"}, {"color_bucket": "M", "grades": {"aggro": 1.79, "all": 1.08, "bomb": 1.6, "diversity": 0.4, "evasion": 0.335, "removal": 1.275}, "image_url": "https://cards.scryfall.io/border_crop/front/9/0/90e68cd8-ea76-4bd1-9199-474da9c3e8bf.jpg?1771587007", "key": "Go Ninja Go::814664e11cf2", "main_colors": ["R", "W"], "name": "Go Ninja Go", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "B", "grades": {"aggro": 0.945, "all": 0.986, "bomb": 1.45, "diversity": 0.8, "evasion": 0.535, "removal": 1.2}, "image_url": "https://cards.scryfall.io/border_crop/front/9/4/94449d88-2df4-4850-8ffa-d6d193835dda.jpg?1771603451", "key": "The Cloning of Shredder::326ea552848b", "main_colors": ["B"], "name": "The Cloning of Shredder", "rarity": "mythic", "type_line": "Enchantment \u2014 Saga"}, {"color_bucket": "U", "grades": {"aggro": 1.6, "all": 1.24, "bomb": 3.7, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/9/5/9528cc07-df4b-417f-ad65-c2fae6fc2d49.jpg?1771502563", "key": "Crustacean Commando::b3acfd8d684a", "main_colors": ["U"], "name": "Crustacean Commando", "rarity": "common", "type_line": "Creature \u2014 Crab Mutant Soldier"}, {"color_bucket": "G", "grades": {"aggro": 1.7, "all": 2.24, "bomb": 7.8, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/9/5/955848c0-5092-4e13-97c9-5978d44d5586.jpg?1769006201", "key": "Michelangelo, Improviser::8c89d0b6e25a", "main_colors": ["G"], "name": "Michelangelo, Improviser", "rarity": "mythic", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "U", "grades": {"aggro": 1.5, "all": 1.41, "bomb": 2.5, "diversity": 1.8, "evasion": 0.5, "removal": 0.75}, "image_url": "https://cards.scryfall.io/border_crop/front/9/8/989da63a-2cbd-41a9-9bbb-99f4ad1c6a25.jpg?1769005611", "key": "Does Machines::66d59a758056", "main_colors": ["U"], "name": "Does Machines", "rarity": "rare", "type_line": "Enchantment \u2014 Class"}, {"color_bucket": "W", "grades": {"aggro": 1.1, "all": 0.9, "bomb": 2.9, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/9/c/9c769202-178c-442a-a9e2-aa08b5ae5c9a.jpg?1769005601", "key": "Agent Bishop, Man in Black::d23688516c71", "main_colors": ["W"], "name": "Agent Bishop, Man in Black", "rarity": "rare", "type_line": "Legendary Creature \u2014 Human Soldier"}, {"color_bucket": "B", "grades": {"aggro": 2.7, "all": 1.92, "bomb": 5.1, "diversity": 0.4, "evasion": 0.7, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/9/e/9ea9d072-aa98-405e-a475-26f93cc37e53.jpg?1771586909", "key": "Splinter, Hamato Yoshi::e461af617c4c", "main_colors": ["B"], "name": "Splinter, Hamato Yoshi", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Rat"}, {"color_bucket": "W", "grades": {"aggro": 2.2, "all": 1.916, "bomb": 4.9, "diversity": 1.0, "evasion": 0.68, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/9/f/9fbaabb5-e981-4cbf-888c-46449412711f.jpg?1771424706", "key": "Lita, Little Orphan Amphibian::ba73e9582939", "main_colors": ["W"], "name": "Lita, Little Orphan Amphibian", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "B", "grades": {"aggro": 2.1, "all": 0.96, "bomb": 1.3, "diversity": 0.2, "evasion": 0.1, "removal": 1.1}, "image_url": "https://cards.scryfall.io/border_crop/front/a/1/a1c70bf2-b2bd-4585-ba50-304f4dad8e62.jpg?1771586891", "key": "Pain 101::4edf5b22da07", "main_colors": ["B"], "name": "Pain 101", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "G", "grades": {"aggro": 1.6, "all": 1.02, "bomb": 1.6, "diversity": 0.2, "evasion": 0.6, "removal": 1.1}, "image_url": "https://cards.scryfall.io/border_crop/front/a/5/a5405de0-16c9-4e5a-8ceb-00508e212f12.jpg?1771502701", "key": "Guac \u0026 Marshmallow Pizza::9fe2723fa3bc", "main_colors": ["G"], "name": "Guac \u0026 Marshmallow Pizza", "rarity": "common", "type_line": "Artifact \u2014 Food"}, {"color_bucket": "R", "grades": {"aggro": 1.758, "all": 1.696, "bomb": 3.1, "diversity": 1.4, "evasion": 0.7, "removal": 1.523}, "image_url": "https://cards.scryfall.io/border_crop/front/a/5/a566ab2d-6ec8-4833-8ad6-210378b1a20e.jpg?1769005892", "key": "Cool but Rude::6b5fb6a28868", "main_colors": ["R"], "name": "Cool but Rude", "rarity": "rare", "type_line": "Enchantment \u2014 Class"}, {"color_bucket": "R", "grades": {"aggro": 1.6, "all": 2.27, "bomb": 8.35, "diversity": 0.2, "evasion": 0.6, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/a/8/a83a70ba-448e-45f3-b23b-6f38af54811f.jpg?1771502686", "key": "Zog, Triceraton Castaway::4c3d7a971e93", "main_colors": ["R"], "name": "Zog, Triceraton Castaway", "rarity": "common", "type_line": "Legendary Creature \u2014 Dinosaur Soldier"}, {"color_bucket": "U", "grades": {"aggro": 1.5, "all": 1.1, "bomb": 1.3, "diversity": 1.2, "evasion": 0.5, "removal": 1.0}, "image_url": "https://cards.scryfall.io/border_crop/front/a/b/ab47a37b-b66d-4f70-9bf0-4d5ed6b518f3.jpg?1771502595", "key": "Sewer-veillance Cam::feaa45c19e5f", "main_colors": ["U"], "name": "Sewer-veillance Cam", "rarity": "common", "type_line": "Artifact"}, {"color_bucket": "M", "grades": {"aggro": 1.2, "all": 2.27, "bomb": 8.85, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/a/b/abb1ab9c-b067-4b75-8e5b-a893b7948df1.jpg?1771503783", "key": "Foot Ninjas::7e2f7fb40ead", "main_colors": ["B", "W"], "name": "Foot Ninjas", "rarity": "common", "type_line": "Creature \u2014 Human Ninja"}, {"color_bucket": "B", "grades": {"aggro": 1.4, "all": 1.8, "bomb": 6.7, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/a/c/ac182338-ab26-4f9e-87f9-be83c5cc7cd7.jpg?1771343913", "key": "South Wind Avatar::3def82210bb8", "main_colors": ["B"], "name": "South Wind Avatar", "rarity": "rare", "type_line": "Creature \u2014 Snake Spirit Avatar"}, {"color_bucket": "M", "grades": {"aggro": 1.5, "all": 1.83, "bomb": 5.95, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/b/0/b03cf0bb-3207-4e8e-bb3f-e3e4367aa86e.jpg?1771599896", "key": "Pizza Face, Gastromancer::1d25f6d5c511", "main_colors": ["B", "G"], "name": "Pizza Face, Gastromancer", "rarity": "uncommon", "type_line": "Legendary Artifact Creature \u2014 Food Mutant"}, {"color_bucket": "M", "grades": {"aggro": 0.962, "all": 0.944, "bomb": 1.45, "diversity": 0.8, "evasion": 0.4, "removal": 1.11}, "image_url": "https://cards.scryfall.io/border_crop/front/b/7/b7ab2110-5aad-46c9-8dc4-1eac24b6f46b.jpg?1771587000", "key": "Brilliance Unleashed::24ac3889a643", "main_colors": ["R", "U"], "name": "Brilliance Unleashed", "rarity": "uncommon", "type_line": "Sorcery"}, {"color_bucket": "W", "grades": {"aggro": 2.8, "all": 1.76, "bomb": 4.3, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/b/7/b7f4581f-e0c1-4cc3-b94c-dd104606c4af.jpg?1771502822", "key": "Leonardo, Leader in Blue::99596f89b72c", "main_colors": ["W"], "name": "Leonardo, Leader in Blue", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "R", "grades": {"aggro": 1.9, "all": 1.807, "bomb": 4.8, "diversity": 1.3, "evasion": 0.335, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/b/b/bbe1d7e5-68e2-4458-aa3f-5e97fa8e7cae.jpg?1771586948", "key": "Purple Dragon Punks::9446d4cf96f8", "main_colors": ["R"], "name": "Purple Dragon Punks", "rarity": "common", "type_line": "Creature \u2014 Human Rogue"}, {"color_bucket": "W", "grades": {"aggro": 2.0, "all": 1.82, "bomb": 5.4, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/b/c/bc0f5ca8-47bd-4451-8fd1-a312ff7d31ec.jpg?1771342158", "key": "Action News Crew::01f7ea18488c", "main_colors": ["W"], "name": "Action News Crew", "rarity": "common", "type_line": "Creature \u2014 Human Citizen"}, {"color_bucket": "G", "grades": {"aggro": 2.045, "all": 0.854, "bomb": 1.0, "diversity": 0.0, "evasion": 0.0, "removal": 1.225}, "image_url": "https://cards.scryfall.io/border_crop/front/b/c/bc19807b-09e8-4923-abc3-d4bbe8cde5fc.jpg?1771502744", "key": "Tenderize::02460a7a96a0", "main_colors": ["G"], "name": "Tenderize", "rarity": "common", "type_line": "Instant"}, {"color_bucket": "W", "grades": {"aggro": 1.4, "all": 1.67, "bomb": 5.65, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/b/c/bcd8ee6b-7142-4548-8b7a-691a36411851.jpg?1769005568", "key": "Sally Pride, Lioness Leader::887ac501aa6f", "main_colors": ["W"], "name": "Sally Pride, Lioness Leader", "rarity": "rare", "type_line": "Legendary Creature \u2014 Cat Mutant Rebel"}, {"color_bucket": "B", "grades": {"aggro": 1.6, "all": 1.0, "bomb": 2.9, "diversity": 0.0, "evasion": 0.0, "removal": 0.5}, "image_url": "https://cards.scryfall.io/border_crop/front/b/e/be08d2b0-375b-434f-9e6d-060809e0ed34.jpg?1771586916", "key": "Squirrelanoids::b0a4a430b7db", "main_colors": ["B"], "name": "Squirrelanoids", "rarity": "common", "type_line": "Creature \u2014 Squirrel Mutant"}, {"color_bucket": "B", "grades": {"aggro": 1.9, "all": 1.42, "bomb": 3.5, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/b/e/be464d88-8933-46e8-97b0-3be05f1976a3.jpg?1769005882", "key": "Rat King, Verminister::eb6a740b88b0", "main_colors": ["B"], "name": "Rat King, Verminister", "rarity": "rare", "type_line": "Legendary Creature \u2014 Rat Avatar"}, {"color_bucket": "W", "grades": {"aggro": 1.64, "all": 0.922, "bomb": 1.3, "diversity": 0.2, "evasion": 0.22, "removal": 1.25}, "image_url": "https://cards.scryfall.io/border_crop/front/b/e/be8d96fb-a1be-4fff-b844-e38d185884e1.jpg?1771342164", "key": "Dimensional Exile::608d603e29c7", "main_colors": ["W"], "name": "Dimensional Exile", "rarity": "uncommon", "type_line": "Enchantment \u2014 Aura"}, {"color_bucket": "U", "grades": {"aggro": 1.2, "all": 0.72, "bomb": 1.1, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/b/e/beef76b7-856e-48ab-bc73-e4f456c3a100.jpg?1771586813", "key": "Ooze Spill::15752970ce82", "main_colors": ["U"], "name": "Ooze Spill", "rarity": "uncommon", "type_line": "Instant"}, {"color_bucket": "G", "grades": {"aggro": 1.2, "all": 1.487, "bomb": 4.3, "diversity": 1.1, "evasion": 0.235, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/c/2/c2164204-120c-4dff-86ac-46ca9012ccd9.jpg?1771424712", "key": "Mona Lisa, Science Geek::1fc5fa864699", "main_colors": ["G"], "name": "Mona Lisa, Science Geek", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Lizard Mutant"}, {"color_bucket": "R", "grades": {"aggro": 0.8, "all": 0.65, "bomb": 1.15, "diversity": 0.6, "evasion": 0.3, "removal": 0.4}, "image_url": "https://cards.scryfall.io/border_crop/front/c/4/c4a798f3-9adf-4748-ae87-5f44762491ff.jpg?1771343716", "key": "Broadcast Takeover::15f4db082183", "main_colors": ["R"], "name": "Broadcast Takeover", "rarity": "mythic", "type_line": "Sorcery"}, {"color_bucket": "R", "grades": {"aggro": 0.757, "all": 0.588, "bomb": 1.1, "diversity": 0.4, "evasion": 0.2, "removal": 0.483}, "image_url": "https://cards.scryfall.io/border_crop/front/c/4/c4aeb45b-13ed-43ad-a366-7be10dec6222.jpg?1771342407", "key": "Spicy Oatmeal Pizza::04f7d511e185", "main_colors": ["R"], "name": "Spicy Oatmeal Pizza", "rarity": "uncommon", "type_line": "Artifact \u2014 Food"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 1.287, "bomb": 1.9, "diversity": 1.5, "evasion": 1.435, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/c/5/c50c4580-979b-4863-86b9-16e258198972.jpg?1771424738", "key": "Turtle Lair::d61396ff432e", "main_colors": [], "name": "Turtle Lair", "rarity": "uncommon", "type_line": "Land"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 1.087, "bomb": 1.9, "diversity": 1.5, "evasion": 0.435, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/c/6/c6eac43d-08b6-45a4-803b-10a321a241d7.jpg?1771587105", "key": "Mutant Town::7da328bed27f", "main_colors": [], "name": "Mutant Town", "rarity": "common", "type_line": "Land"}, {"color_bucket": "W", "grades": {"aggro": 1.4, "all": 2.04, "bomb": 6.5, "diversity": 0.4, "evasion": 1.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/c/9/c9d5b56c-ad2a-4958-8783-4eceb8733610.jpg?1771502461", "key": "East Wind Avatar::630a396c5c03", "main_colors": ["W"], "name": "East Wind Avatar", "rarity": "common", "type_line": "Creature \u2014 Bird Spirit Avatar"}, {"color_bucket": "G", "grades": {"aggro": 1.8, "all": 1.527, "bomb": 3.5, "diversity": 1.3, "evasion": 0.335, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/d/1/d1a72d09-9cfc-463a-a9ec-3359003d54da.jpg?1771502693", "key": "Frog Butler::8500f2f71524", "main_colors": ["G"], "name": "Frog Butler", "rarity": "common", "type_line": "Creature \u2014 Frog Spirit"}, {"color_bucket": "G", "grades": {"aggro": 1.4, "all": 1.09, "bomb": 2.2, "diversity": 0.8, "evasion": 0.4, "removal": 0.65}, "image_url": "https://cards.scryfall.io/border_crop/front/d/2/d27b6f2a-84df-4097-a66a-8e463db47f58.jpg?1769006231", "key": "Party Dude::a66d5eb0bd10", "main_colors": ["G"], "name": "Party Dude", "rarity": "rare", "type_line": "Enchantment \u2014 Class"}, {"color_bucket": "B", "grades": {"aggro": 1.8, "all": 1.125, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 1.025}, "image_url": "https://cards.scryfall.io/border_crop/front/d/2/d2cbe512-725f-4884-ac49-a98a78e7d14e.jpg?1771586903", "key": "Shredder\u0027s Armor::ef11d6a3db23", "main_colors": ["B"], "name": "Shredder\u0027s Armor", "rarity": "uncommon", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "C", "grades": {"aggro": 1.24, "all": 1.352, "bomb": 4.5, "diversity": 0.0, "evasion": 0.12, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/d/7/d77aa46e-fa57-4427-b0a3-0a957dc994dc.jpg?1771502803", "key": "Henchbots::7a2616788f11", "main_colors": [], "name": "Henchbots", "rarity": "uncommon", "type_line": "Artifact Creature \u2014 Robot"}, {"color_bucket": "C", "grades": {"aggro": 1.845, "all": 1.413, "bomb": 1.9, "diversity": 1.5, "evasion": 0.57, "removal": 1.25}, "image_url": "https://cards.scryfall.io/border_crop/front/d/b/dbca168e-095f-4fbc-88f8-3048d83caf94.jpg?1769006600", "key": "Northampton Farm::058e5f896338", "main_colors": [], "name": "Northampton Farm", "rarity": "rare", "type_line": "Land"}, {"color_bucket": "C", "grades": {"aggro": 1.3, "all": 0.88, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 0.3}, "image_url": "https://cards.scryfall.io/border_crop/front/d/e/deadb6d8-3eea-4261-a07c-8536df89e85c.jpg?1771502813", "key": "Skateboard::95d3c852f36d", "main_colors": [], "name": "Skateboard", "rarity": "uncommon", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "C", "grades": {"aggro": 1.661, "all": 0.925, "bomb": 1.3, "diversity": 0.6, "evasion": 0.16, "removal": 0.905}, "image_url": "https://cards.scryfall.io/border_crop/front/d/f/df2cdaa5-9ea0-4aa5-89d3-9edf40fa2a39.jpg?1771476702", "key": "Everything Pizza::8892a72c4afe", "main_colors": [], "name": "Everything Pizza", "rarity": "uncommon", "type_line": "Artifact \u2014 Food"}, {"color_bucket": "W", "grades": {"aggro": 1.4, "all": 1.04, "bomb": 1.7, "diversity": 0.8, "evasion": 0.4, "removal": 0.9}, "image_url": "https://cards.scryfall.io/border_crop/front/d/f/dfb18239-d373-4795-8598-c82abae2cb62.jpg?1771342217", "key": "The Last Ronin\u0027s Technique::09836a9f4892", "main_colors": ["W"], "name": "The Last Ronin\u0027s Technique", "rarity": "uncommon", "type_line": "Instant"}, {"color_bucket": "R", "grades": {"aggro": 1.557, "all": 1.973, "bomb": 6.45, "diversity": 0.2, "evasion": 0.6, "removal": 1.058}, "image_url": "https://cards.scryfall.io/border_crop/front/e/0/e02e971f-6008-4c82-acd2-2aed13009ccb.jpg?1771502622", "key": "General Traag, Heart of Stone::83a7dc6bed58", "main_colors": ["R"], "name": "General Traag, Heart of Stone", "rarity": "uncommon", "type_line": "Legendary Artifact Creature \u2014 Elemental Soldier"}, {"color_bucket": "G", "grades": {"aggro": 1.5, "all": 2.14, "bomb": 7.8, "diversity": 0.2, "evasion": 0.6, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/e/1/e1a866e6-4108-4290-9680-8f1652fbcf77.jpg?1771502730", "key": "Primordial Pachyderm::a330e86b7401", "main_colors": ["G"], "name": "Primordial Pachyderm", "rarity": "common", "type_line": "Creature \u2014 Elephant Avatar"}, {"color_bucket": "B", "grades": {"aggro": 1.6, "all": 1.58, "bomb": 4.6, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/e/6/e65ff1f4-a061-4c31-a78e-92af6e7bc56f.jpg?1771586878", "key": "Oroku Saki, Shredder Rising::f259b06faaf3", "main_colors": ["B"], "name": "Oroku Saki, Shredder Rising", "rarity": "common", "type_line": "Legendary Creature \u2014 Human Ninja"}, {"color_bucket": "W", "grades": {"aggro": 1.2, "all": 1.22, "bomb": 4.0, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/e/8/e802838f-cc8c-4313-8c3b-32a6a7248e64.jpg?1771502512", "key": "Leonardo, Big Brother::1342c415965b", "main_colors": ["W"], "name": "Leonardo, Big Brother", "rarity": "common", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "W", "grades": {"aggro": 1.3, "all": 1.66, "bomb": 5.1, "diversity": 0.2, "evasion": 1.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/e/9/e927eb0b-1c69-421a-8acd-01e92f729ffb.jpg?1771502498", "key": "High-Flying Ace::6cbd151ed7ec", "main_colors": ["W"], "name": "High-Flying Ace", "rarity": "common", "type_line": "Creature \u2014 Bird Mutant"}, {"color_bucket": "R", "grades": {"aggro": 1.6, "all": 1.58, "bomb": 4.6, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/e/b/eb44c134-fcd8-4ad8-841c-f1723ba93216.jpg?1771502666", "key": "Null Group Biological Assets::71f49eabd98f", "main_colors": ["R"], "name": "Null Group Biological Assets", "rarity": "common", "type_line": "Creature \u2014 Mutant Mercenary"}, {"color_bucket": "G", "grades": {"aggro": 1.5, "all": 3.31, "bomb": 12.35, "diversity": 0.6, "evasion": 1.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/e/b/ebbb5756-80fa-406f-8daa-be1f5a6c3c80.jpg?1771586968", "key": "Rocksteady, Crash Courser::99558a990e18", "main_colors": ["G"], "name": "Rocksteady, Crash Courser", "rarity": "common", "type_line": "Legendary Creature \u2014 Rhino Mutant"}, {"color_bucket": "W", "grades": {"aggro": 1.545, "all": 1.254, "bomb": 2.5, "diversity": 1.0, "evasion": 0.5, "removal": 0.725}, "image_url": "https://cards.scryfall.io/border_crop/front/e/f/ef9e227e-c581-479c-a962-2f191352b07f.jpg?1771502541", "key": "Quintessential Katana::bc4bc9501888", "main_colors": ["W"], "name": "Quintessential Katana", "rarity": "uncommon", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "R", "grades": {"aggro": 1.857, "all": 1.648, "bomb": 4.8, "diversity": 0.4, "evasion": 0.2, "removal": 0.985}, "image_url": "https://cards.scryfall.io/border_crop/front/f/2/f24c90c8-ed04-4b4e-8b19-c7d07a90c6b8.jpg?1771342404", "key": "Raphael, Tough Turtle::af88ed71dc57", "main_colors": ["R"], "name": "Raphael, Tough Turtle", "rarity": "common", "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle"}, {"color_bucket": "C", "grades": {"aggro": 1.1, "all": 0.767, "bomb": 1.3, "diversity": 1.1, "evasion": 0.235, "removal": 0.1}, "image_url": "https://cards.scryfall.io/border_crop/front/f/2/f2c8397c-2014-4a43-9ed7-41795880011f.jpg?1771587071", "key": "Omni-Cheese Pizza::b9d96a9e0d0b", "main_colors": [], "name": "Omni-Cheese Pizza", "rarity": "common", "type_line": "Artifact \u2014 Food"}, {"color_bucket": "G", "grades": {"aggro": 1.3, "all": 0.88, "bomb": 1.4, "diversity": 0.6, "evasion": 0.3, "removal": 0.8}, "image_url": "https://cards.scryfall.io/border_crop/front/f/3/f37ef012-c566-4d16-acf8-6079244907be.jpg?1771502723", "key": "Novel Nunchaku::ba12cfe35fa0", "main_colors": ["G"], "name": "Novel Nunchaku", "rarity": "uncommon", "type_line": "Artifact \u2014 Equipment"}, {"color_bucket": "G", "grades": {"aggro": 1.6, "all": 3.317, "bomb": 12.2, "diversity": 0.8, "evasion": 0.9, "removal": 1.085}, "image_url": "https://cards.scryfall.io/border_crop/front/f/4/f4b8f7e6-9bff-430b-b2f5-4308d57d1194.jpg?1771586987", "key": "West Wind Avatar::af657cf8e569", "main_colors": ["G"], "name": "West Wind Avatar", "rarity": "uncommon", "type_line": "Creature \u2014 Cat Spirit Avatar"}, {"color_bucket": "G", "grades": {"aggro": 1.8, "all": 1.44, "bomb": 4.5, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/f/5/f57ba8ff-2f8c-4ca1-9b13-42a7cc213e99.jpg?1771502750", "key": "Zoo Escapees::0b0e41036405", "main_colors": ["G"], "name": "Zoo Escapees", "rarity": "common", "type_line": "Creature \u2014 Boar Rhino"}, {"color_bucket": "G", "grades": {"aggro": 2.3, "all": 1.28, "bomb": 1.9, "diversity": 0.6, "evasion": 0.3, "removal": 1.3}, "image_url": "https://cards.scryfall.io/border_crop/front/f/6/f6314c7f-41dc-4bbd-99db-3a8a1d2977b2.jpg?1771586974", "key": "Saved by the Shell::8fea7debfbce", "main_colors": ["G"], "name": "Saved by the Shell", "rarity": "uncommon", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 1.645, "all": 0.886, "bomb": 0.8, "diversity": 0.2, "evasion": 0.235, "removal": 1.55}, "image_url": "https://cards.scryfall.io/border_crop/front/f/a/fa684608-ecd3-43e2-99a1-71318f133e29.jpg?1771587064", "key": "Tainted Treats::12143e7403ca", "main_colors": ["B", "G"], "name": "Tainted Treats", "rarity": "uncommon", "type_line": "Instant"}, {"color_bucket": "M", "grades": {"aggro": 1.4, "all": 1.24, "bomb": 3.5, "diversity": 0.4, "evasion": 0.2, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/f/a/faab52c0-ce79-40af-a156-b193a62d439e.jpg?1771502756", "key": "EPF Point Squad::4233ed0cdc3a", "main_colors": ["R", "W"], "name": "EPF Point Squad", "rarity": "common", "type_line": "Creature \u2014 Human Soldier"}, {"color_bucket": "G", "grades": {"aggro": 1.6, "all": 2.21, "bomb": 8.55, "diversity": 0.2, "evasion": 0.1, "removal": 0.6}, "image_url": "https://cards.scryfall.io/border_crop/front/f/c/fcb59b16-3d76-478e-9306-969dd2cb1b5a.jpg?1771586980", "key": "Venus, Torn Between Worlds::f8e5cc3902b3", "main_colors": ["G"], "name": "Venus, Torn Between Worlds", "rarity": "uncommon", "type_line": "Legendary Creature \u2014 Mutant Frog Turtle"}, {"color_bucket": "B", "grades": {"aggro": 1.4, "all": 1.696, "bomb": 4.6, "diversity": 0.4, "evasion": 1.38, "removal": 0.7}, "image_url": "https://cards.scryfall.io/border_crop/front/f/f/ff26f7ff-7f70-4204-9b48-de9e21dc89ec.jpg?1771586866", "key": "Insectoid Exterminator::54ab54ff03ed", "main_colors": ["B"], "name": "Insectoid Exterminator", "rarity": "common", "type_line": "Creature \u2014 Insect Mutant"}];
+    const pageState = {
+      tab: "bomb",
+      color: focusColor,
+      cuOnly: false,
+      page: 1,
+      limit: 8
+    };
+
+    function setActiveButton(group, key, value) {
+      group.querySelectorAll("button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset[key] === value);
+      });
+    }
+
+    function applyManaFocusState() {
+      document.querySelectorAll(".mana-symbol[data-mana-color]").forEach((node) => {
+        const symbolColor = (node.dataset.manaColor || "").toUpperCase();
+        const isAll = focusColor === "ALL";
+        const isMatch = symbolColor === focusColor;
+        node.classList.toggle("is-active", isAll || isMatch);
+        node.classList.toggle("is-muted", !isAll && !isMatch);
+      });
+
+      document.querySelectorAll(".curve-legend-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.color === focusColor);
+      });
+    }
+
+    function syncUrlState() {
+      const params = new URLSearchParams(window.location.search);
+      if (focusColor === "ALL") {
+        params.delete("focus_color");
+      } else {
+        params.set("focus_color", focusColor);
+      }
+      params.set("report_tab", reportTargetToTab[activeReportTarget] || "overview");
+      params.set("theme", activeTheme);
+      const query = params.toString();
+      const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+      window.history.replaceState({}, "", next);
+    }
+
+    function refreshCurveChart() {
+      curveDatasets = buildCurveDatasets();
+      manaCurveChart.data.datasets = getCurveDatasetsForFocus(focusColor);
+      const single = focusColor !== "ALL";
+      manaCurveChart.options.scales.x.stacked = !single;
+      manaCurveChart.options.scales.y.stacked = !single;
+      manaCurveChart.update();
+    }
+
+    function setFocusColor(nextColor, opts = { refreshCards: true }) {
+      const normalized = (nextColor || "ALL").toUpperCase();
+      focusColor = allowedFocusColors.includes(normalized) ? normalized : "ALL";
+      pageState.color = focusColor;
+      pageState.page = 1;
+      setActiveButton(document.getElementById("highlightColors"), "color", pageState.color);
+      applyManaFocusState();
+      refreshCurveChart();
+      syncUrlState();
+      if (opts.refreshCards) {
+        refreshCardHighlight();
+      }
+    }
+
+    function applyTheme(theme, opts = { syncUrl: true }) {
+      activeTheme = allowedThemes.includes(theme) ? theme : "dark";
+      document.body.setAttribute("data-theme", activeTheme);
+      window.localStorage.setItem("sealed-reporter-theme", activeTheme);
+      const btn = document.getElementById("themeToggleBtn");
+      if (btn) {
+        btn.textContent = activeTheme === "dark" ? "🌙 Dark" : "☀️ Light";
+      }
+      refreshCurveChart();
+      if (opts.syncUrl) {
+        syncUrlState();
+      }
+    }
+
+    function switchReportPanel(target, opts = { syncUrl: true }) {
+      activeReportTarget = target;
+      document.querySelectorAll(".report-tab-btn").forEach((item) => item.classList.toggle("active", item.dataset.target === target));
+      document.querySelectorAll(".report-panel").forEach((panel) => {
+        panel.classList.toggle("report-panel-hidden", panel.id !== target);
+      });
+      if (opts.syncUrl) {
+        syncUrlState();
+      }
+    }
+
+    function refreshCardHighlight() {
+      const payload = buildCardHighlightPayloadFromDataset();
+      renderHighlightCards(payload.items || []);
+      document.getElementById("pageLabel").textContent = `Page ${payload.page} / ${payload.total_pages}`;
+      document.getElementById("prevPageBtn").disabled = payload.page <= 1;
+      document.getElementById("nextPageBtn").disabled = payload.page >= payload.total_pages;
+      pageState.page = payload.page;
+    }
+
+    function buildCardHighlightPayloadFromDataset() {
+      const selectedTab = pageState.tab;
+      const selectedColor = pageState.color;
+      const filtered = cardHighlightDataset.filter((item) => {
+        if (pageState.cuOnly && !["common", "uncommon"].includes((item.rarity || "").toLowerCase())) {
+          return false;
+        }
+        if (selectedColor === "ALL") {
+          return true;
+        }
+        const bucket = (item.color_bucket || "").toUpperCase();
+        const colors = new Set((item.main_colors || []).map((value) => String(value).toUpperCase()));
+        return bucket === selectedColor || colors.has(selectedColor);
+      });
+
+      const ranked = filtered
+        .map((item) => ({
+          ...item,
+          grade: Number((item.grades || {})[selectedTab] || 0)
+        }))
+        .sort((a, b) => b.grade - a.grade);
+
+      const totalItems = ranked.length;
+      const totalPages = Math.max(1, Math.ceil(totalItems / pageState.limit));
+      const currentPage = Math.min(Math.max(1, pageState.page), totalPages);
+      const start = (currentPage - 1) * pageState.limit;
+      const end = start + pageState.limit;
+      const items = ranked.slice(start, end).map((item) => ({
+        name: item.name,
+        type_line: item.type_line,
+        rarity: item.rarity,
+        image_url: item.image_url,
+        grade: Number(item.grade || 0).toFixed(2),
+      }));
+
+      return {
+        items,
+        page: currentPage,
+        total_pages: totalPages,
+      };
+    }
+
+    function renderHighlightCards(items) {
+      const grid = document.getElementById("highlightGrid");
+      grid.innerHTML = "";
+      if (!items.length) {
+        grid.innerHTML = "<p>No cards for this filter.</p>";
+        return;
+      }
+      for (const item of items) {
+        const card = document.createElement("article");
+        card.className = "highlight-item";
+        card.innerHTML = `
+          <div class="highlight-image-wrap">
+            ${item.image_url ? `<img src="${item.image_url}" alt="${item.name}">` : "<div class='image-placeholder'>No image</div>"}
+            <span class="grade-badge">${item.grade}</span>
+          </div>
+          <h3>${item.name}</h3>
+          <p>${item.type_line || ""}</p>
+          <p class="muted">${item.rarity || ""}</p>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    document.querySelectorAll(".report-tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        switchReportPanel(btn.dataset.target);
+      });
+    });
+
+    document.getElementById("highlightTabs").addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-tab]");
+      if (!button) return;
+      pageState.tab = button.dataset.tab;
+      pageState.page = 1;
+      setActiveButton(document.getElementById("highlightTabs"), "tab", pageState.tab);
+      refreshCardHighlight();
+    });
+
+    document.getElementById("highlightColors").addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-color]");
+      if (!button) return;
+      const color = button.dataset.color;
+      const next = (focusColor === color && color !== "ALL") ? "ALL" : color;
+      setFocusColor(next);
+    });
+
+    document.getElementById("cuOnlySwitch").addEventListener("change", (event) => {
+      pageState.cuOnly = !!event.target.checked;
+      pageState.page = 1;
+      refreshCardHighlight();
+    });
+
+    document.getElementById("prevPageBtn").addEventListener("click", () => {
+      pageState.page = Math.max(1, pageState.page - 1);
+      refreshCardHighlight();
+    });
+
+    document.getElementById("nextPageBtn").addEventListener("click", () => {
+      pageState.page += 1;
+      refreshCardHighlight();
+    });
+
+    document.querySelectorAll(".curve-legend-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const color = (btn.dataset.color || "ALL").toUpperCase();
+        const next = focusColor === color ? "ALL" : color;
+        setFocusColor(next);
+      });
+    });
+
+    document.getElementById("themeToggleBtn").addEventListener("click", () => {
+      const nextTheme = activeTheme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+    });
+
+    applyTheme(activeTheme, { syncUrl: false });
+    switchReportPanel(activeReportTarget, { syncUrl: false });
+    setFocusColor(focusColor, { refreshCards: false });
+    refreshCardHighlight();
+  </script>
+</body>
+</html>
