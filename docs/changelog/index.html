@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog - Sealed Reporter</title>
+  <link rel="stylesheet" href="/sealed_reporter/static/css/dashboard.css">
+</head>
+<body class="dashboard-page">
+  
+  
+<header class="report-topline">
+  <div class="report-shell report-topline-inner">
+    <div class="report-topline-left">
+      
+        <a class="report-page-back" href="/sealed_reporter/">&lt; Back to Reports</a>
+      
+    </div>
+    <div class="report-topline-right">
+      <a class="report-topline-btn" href="/sealed_reporter/changelog">📋 Changelog</a>
+      <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle color theme">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+
+  <header class="report-index-banner">
+    <div class="report-shell report-index-banner-inner">
+      <h1 class="report-index-title">Changelog</h1>
+      <p class="report-index-lead">Release notes and updates from readme files.</p>
+    </div>
+  </header>
+
+  <main class="report-shell">
+    <section class="changelog-content">
+      
+        
+          <article class="changelog-section panel-card">
+            <h2 class="changelog-section-title">Changelog</h2>
+            <div class="changelog-section-body content-markdown">
+              <h1>Beta launch</h1>
+<p>We're launching <strong>Sealed Reporter</strong> as a <strong>beta</strong> release.</p>
+<h2>What's in this release</h2>
+<ul>
+<li><strong>Set reports</strong> — Browse and open set reports (e.g. TMT) with full dashboards and card signals.</li>
+<li><strong>Set info &amp; B.R.E.A.D.</strong> — Overview, mana curve, type composition, and B.R.E.A.D. highlights.</li>
+<li><strong>Synergy</strong> — Mechanic clusters, synergy rankings, and best color pairs.</li>
+<li><strong>Guidelines</strong> — Best pairs, key signals, and signal cards with hover previews.</li>
+<li><strong>Card exploration</strong> — Filter by category (Bomb, Removal, Evasion, Aggro, Diversity), color, and rarity.</li>
+<li><strong>Changelog</strong> — This page, loaded from markdown files.</li>
+<li><strong>Light / dark mode</strong> — Theme toggle in the header.</li>
+</ul>
+<h2>Feedback</h2>
+<p>This is a beta. We'll iterate based on your feedback. Enjoy the draft intelligence.</p>
+            </div>
+          </article>
+        
+      
+    </section>
+  </main>
+
+  <footer class="report-float-footer">
+    <a class="report-topline-link" href="/sealed_reporter/">Reports</a>
+    <span class="footer-separator">•</span>
+    Create with love and mathematics by
+    <a href="https://instagram.com/guidimtg" target="_blank" rel="noopener noreferrer">@guidimtg</a>
+    <span class="footer-separator">•</span>
+    <span class="footer-version">Version 0.0.0-beta.1</span>
+  </footer>
+
+  <script>
+    const allowedThemes = ["dark", "light"];
+    const storedTheme = (window.localStorage.getItem("sealed-reporter-theme") || "").toLowerCase();
+    const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let activeTheme = allowedThemes.includes(storedTheme) ? storedTheme : (systemPrefersDark ? "dark" : "light");
+
+    function applyTheme(theme) {
+      activeTheme = allowedThemes.includes(theme) ? theme : "dark";
+      document.body.setAttribute("data-theme", activeTheme);
+      window.localStorage.setItem("sealed-reporter-theme", activeTheme);
+      const btn = document.getElementById("themeToggleBtn");
+      if (btn) btn.textContent = activeTheme === "dark" ? "🌙 Dark" : "☀️ Light";
+    }
+
+    const btn = document.getElementById("themeToggleBtn");
+    if (btn) btn.addEventListener("click", () => applyTheme(activeTheme === "dark" ? "light" : "dark"));
+    applyTheme(activeTheme);
+  </script>
+</body>
+</html>
