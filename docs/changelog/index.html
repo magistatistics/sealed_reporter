@@ -37,7 +37,17 @@
           <article class="changelog-section panel-card">
             <h2 class="changelog-section-title">Changelog</h2>
             <div class="changelog-section-body content-markdown">
-              <h1>Beta launch</h1>
+              <h1>Changelog</h1>
+<h2>0.0.0-beta.2 (2025-03-10)</h2>
+<h3>Evaluation improvements</h3>
+<ul>
+<li><strong>Bomb CMC curve</strong> — Steeper penalty for high CMC in bomb score: 5-drops and 6-drops score lower, 7+ more negative, so expensive creatures (e.g. 7-mana bombs) don’t dominate rankings.</li>
+<li><strong>Removal saga penalty</strong> — Reduced the removal scorer’s penalty for <code>subtype:saga</code> (from -0.4 to -0.15) so removal sagas (e.g. The Last Ronin) aren’t over-penalized.</li>
+<li><strong>Bomb-heavy “all” composite</strong> — The overall card ranking (“all” tab) now weights bomb 2× and other categories 1×, so true bombs align better with draft tier lists.</li>
+</ul>
+<h3>Other</h3>
+<h2>- <strong>Optional pandas</strong> — The scoring module (<code>common/score</code>) no longer requires pandas at import time when you only pass list-of-dicts (e.g. the CGB comparison script runs without installing pandas).</h2>
+<h2>0.0.0-beta.1 — Beta launch</h2>
 <p>We're launching <strong>Sealed Reporter</strong> as a <strong>beta</strong> release.</p>
 <h2>What's in this release</h2>
 <ul>
@@ -64,7 +74,7 @@
     Create with love and mathematics by
     <a href="https://instagram.com/guidimtg" target="_blank" rel="noopener noreferrer">@guidimtg</a>
     <span class="footer-separator">•</span>
-    <span class="footer-version">Version 0.0.0-beta.1</span>
+    <span class="footer-version">Version 0.0.0-beta.2</span>
   </footer>
 
   <script>
